@@ -31,6 +31,9 @@ print(res[[1]])
 #> 
 #> $is_unk
 #> [1] FALSE
+#> 
+#> $is_user
+#> [1] FALSE
 ```
 
 ## Related repositories
