@@ -21,7 +21,8 @@ kuromoji <- function(str, userDic = "") {
             surface = surface,
             feature = feature,
             is_know =  token$isKnown(),
-            is_unk = token$isUnknown()
+            is_unk = token$isUnknown(),
+            is_user = token$isUser()
         ))
     })
     return(res)
