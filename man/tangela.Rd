@@ -6,7 +6,7 @@
 \alias{tangela-package}
 \title{tangela: rJava Interface to Kuromoji}
 \description{
-An rJava interface to kuromoji (v0.7.7).
+An rJava interface to atilika/kuromoji (v0.7.7).
 }
 \seealso{
 Useful links:
