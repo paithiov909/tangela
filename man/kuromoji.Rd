@@ -4,12 +4,10 @@
 \alias{kuromoji}
 \title{Call Kuromoji Tokenizer}
 \usage{
-kuromoji(str, userDic = "")
+kuromoji(str)
 }
 \arguments{
 \item{str}{String to be tokenized.}
-
-\item{userDic}{String}
 }
 \value{
 a list
