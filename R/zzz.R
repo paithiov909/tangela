@@ -23,10 +23,3 @@ Tokenizer <- NULL
   Builder$userDictionary(user_dic)
   Tokenizer <<- Builder$build()
 }
-
-#' onUnload
-#' @noRd
-#' @param libpath libpath
-.onUnload <- function(libpath) {
-  # No use...
-}
