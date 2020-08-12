@@ -3,7 +3,7 @@ Type: Package
 Title: rJava Interface to Kuromoji
 Version: 0.0.3
 Authors@R: person("Kato", "Akiru", email = "paithiov909@gmail.com", role = c("aut", "cre"))
-Author: paithiov909
+Author: paithiov909 [aut, cre]
 Maintainer: Kato Akiru <paithiov909@gmail.com>
 Description: An rJava interface to atilika/kuromoji (v0.7.7).
 Depends:
