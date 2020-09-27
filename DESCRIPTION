@@ -1,7 +1,7 @@
 Package: tangela
 Type: Package
 Title: rJava Interface to Kuromoji
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: person("Kato", "Akiru", email = "paithiov909@gmail.com", role = c("aut", "cre"))
 Author: paithiov909 [aut, cre]
 Maintainer: Kato Akiru <paithiov909@gmail.com>

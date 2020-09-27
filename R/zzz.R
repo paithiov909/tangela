@@ -10,10 +10,10 @@ Tokenizer <- NULL
 #' @import rJava
 #' @keywords internal
 .onLoad <- function(libname, pkgname) {
-  rJava::.jpackage(pkgname, lib.loc = libname)
-
-  # For dev environment
-  rJava::.jaddClassPath("inst/java/kuromoji-0.7.7.jar")
+  rJava::.jpackage(pkgname,
+    morePaths = c("inst/java/kuromoji-0.7.7.jar"),
+    lib.loc = libname
+  )
 
   rJava::javaImport(packages = "org.atilika.kuromoji.Token")
   rJava::javaImport(packages = "org.atilika.kuromoji.Tokenizer")
