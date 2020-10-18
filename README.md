@@ -21,11 +21,11 @@ remotes::install_github("paithiov909/tangela")
 
 ## Requirements
 
-  - JDK
+  - Java
 
 ## Usage
 
-Basically use:
+Basic usage:
 
 ``` r
 res <- tangela::kuromoji("決して自分が選んだだけなのに、選ばれたような嬉しさや幸せをくれるのがデニムです")
@@ -176,5 +176,4 @@ By contributing to this project, you agree to abide by its terms.
 
 MIT license.
 
-This software includes the works that are distributed in Apache License
-2.0.
+This software includes the works distributed under Apache License 2.0.
