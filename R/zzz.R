@@ -1,20 +1,26 @@
 #' Tokenizer instance
 #' @noRd
 #' @keywords internal
-Tokenizer <- NULL
+Tokenizer <- (function() {
+  if (!exists("instance")) instance <- NULL
+  function(obj = NULL) {
+    if (!is.null(obj)) instance <<- obj
+    return(instance)
+  }
+})()
 
 #' Initialize Kuromoji Tokenizer
 #'
 #' @param user_dic character scalar. file path to user dictionary if any.
-#' @return return kuromoji tokenizer instance invisibly.
+#' @return returns kuromoji tokenizer instance invisibly.
 #'
 #' @import rJava
 #' @export
 rebuild_tokenizer <- function(user_dic = "") {
   Builder <- rJava::J("org.atilika.kuromoji.Tokenizer")$builder()
   Builder$userDictionary(user_dic)
-  Tokenizer <<- Builder$build()
-  return(invisible(Tokenizer))
+  Tokenizer(Builder$build())
+  return(invisible(Tokenizer()))
 }
 
 #' onLoad
@@ -34,4 +40,3 @@ rebuild_tokenizer <- function(user_dic = "") {
   # Initialize
   rebuild_tokenizer()
 }
-

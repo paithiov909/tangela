@@ -7,7 +7,7 @@
 kuromoji(str)
 }
 \arguments{
-\item{str}{Character scalar to be tokenized.}
+\item{str}{character scalar to be tokenized.}
 }
 \value{
 list

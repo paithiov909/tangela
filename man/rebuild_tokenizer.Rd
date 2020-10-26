@@ -10,7 +10,7 @@ rebuild_tokenizer(user_dic = "")
 \item{user_dic}{character scalar. file path to user dictionary if any.}
 }
 \value{
-return kuromoji tokenizer instance invisibly.
+returns kuromoji tokenizer instance invisibly.
 }
 \description{
 Initialize Kuromoji Tokenizer
