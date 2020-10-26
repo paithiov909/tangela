@@ -1,6 +1,6 @@
 #' Call Kuromoji Tokenizer
 #'
-#' @param str Character scalar to be tokenized.
+#' @param str character scalar to be tokenized.
 #' @return list
 #'
 #' @import rJava
@@ -11,7 +11,7 @@ kuromoji <- function(str) {
     message("Invalid string provided. String must be a character scalar, not NA_character_.")
     return(invisible(list()))
   } else {
-    tokens <- rJava::.jcall(Tokenizer, "Ljava/util/List;", "tokenize", stringi::stri_enc_toutf8(str))
+    tokens <- rJava::.jcall(Tokenizer(), "Ljava/util/List;", "tokenize", stringi::stri_enc_toutf8(str))
     res <- lapply(tokens, function(token) {
       surface <- token$getSurfaceForm()
       feature <- token$getAllFeatures()
