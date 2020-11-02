@@ -7,7 +7,7 @@
 rebuild_tokenizer(user_dic = "")
 }
 \arguments{
-\item{user_dic}{character scalar. file path to user dictionary if any.}
+\item{user_dic}{character scalar. file path to a user dictionary if any.}
 }
 \value{
 returns kuromoji tokenizer instance invisibly.

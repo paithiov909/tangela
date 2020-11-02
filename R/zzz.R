@@ -11,7 +11,7 @@ Tokenizer <- (function() {
 
 #' Initialize Kuromoji Tokenizer
 #'
-#' @param user_dic character scalar. file path to user dictionary if any.
+#' @param user_dic character scalar. file path to a user dictionary if any.
 #' @return returns kuromoji tokenizer instance invisibly.
 #'
 #' @import rJava
@@ -34,9 +34,6 @@ rebuild_tokenizer <- function(user_dic = "") {
     morePaths = c("inst/java/kuromoji-0.7.7.jar"),
     lib.loc = libname
   )
-  rJava::javaImport(packages = "org.atilika.kuromoji.Token")
-  rJava::javaImport(packages = "org.atilika.kuromoji.Tokenizer")
-
   # Initialize
   rebuild_tokenizer()
 }

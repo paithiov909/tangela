@@ -13,15 +13,15 @@ license](https://img.shields.io/github/license/paithiov909/tangela)](https://git
 
 > rJava Interface to Kuromoji
 
+## System Requirements
+
+  - Java
+
 ## Installation
 
 ``` r
 remotes::install_github("paithiov909/tangela")
 ```
-
-## Requirements
-
-  - Java
 
 ## Usage
 
@@ -137,7 +137,7 @@ hyahhaaa <- function(text, replacement = "ヒャッハァーー！", pos = "名�
 
 ``` r
 hyahhaaa("恋するだけが乙女じゃない 素直なだけがいい子じゃない")
-#> [1] "恋するだけがヒャッハァーー！じゃない ヒャッハァーー！なだけがいい子じゃない"
+#> [1] "恋するだけがヒャッハァーー！じゃない ヒャッハァーー！なだけがいいヒャッハァーー！じゃない"
 ```
 
 ### 参考
@@ -156,7 +156,7 @@ hyahhaaa("恋するだけが乙女じゃない 素直なだけがいい子じゃ
   - [日本語文の名詞をランダムに「ヒャッハァー！」に置換するＲスクリプト -
     こにしき（言葉・日本社会・教育）](https://terasawat.hatenablog.jp/entry/20100711/1278861735)
 
-## Related repositories
+## Related Repositories
 
   - [s-u/rJava: R to Java interface](https://github.com/s-u/rJava)
   - [atilika/kuromoji: Kuromoji is a self-contained and very easy to use

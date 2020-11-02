@@ -1,10 +1,9 @@
 Package: tangela
 Type: Package
 Title: rJava Interface to Kuromoji
-Version: 0.0.4-2
+Version: 0.0.4-3
 Authors@R: c(
     person("Kato", "Akiru", email = "paithiov909@gmail.com", role = c("aut", "cre")))
-Author: paithiov909 [aut, cre]
 Maintainer: Kato Akiru <paithiov909@gmail.com>
 Description: An rJava interface to atilika/kuromoji (v0.7.7).
 Depends: R (>= 3.2.0)
