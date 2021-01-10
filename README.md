@@ -7,6 +7,8 @@
 
 [![GitHub last
 commit](https://img.shields.io/github/last-commit/paithiov909/tangela)](#)
+[![Lifecycle:
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![GitHub
 license](https://img.shields.io/github/license/paithiov909/tangela)](https://github.com/paithiov909/tangela/blob/master/LICENSE)
 <!-- badges: end -->
@@ -25,7 +27,7 @@ remotes::install_github("paithiov909/tangela")
 
 ## Usage
 
-Basic usage:
+### Basic usage
 
 ``` r
 res <- tangela::kuromoji("決して自分が選んだだけなのに、選ばれたような嬉しさや幸せをくれるのがデニムです")
@@ -46,9 +48,11 @@ print(res[[1]])
 #> [1] FALSE
 ```
 
-Some examples which shows you how to use output of tangela:
+### Examples
 
-### ゲンシジン ナル
+Some more examples which shows you how to use output of tangela:
+
+#### ゲンシジン ナル
 
 > 助詞を除いてカタコトの日本語に
 
@@ -96,7 +100,7 @@ genshijin("メガネは顔の一部じゃない あなたはわたしの全て�
 #> [1] "メガネ カオ ノ イチブ ジャ ナイ アナタ ワタシ ノ スベテ ジャ ナイ"
 ```
 
-### 名詞をランダムに「ヒャッハァー！」に置換
+#### 名詞をランダムに「ヒャッハァー！」に置換
 
 ``` r
 hyahhaaa <- function(text, replacement = "ヒャッハァーー！", pos = "名詞", p = 0.8) {

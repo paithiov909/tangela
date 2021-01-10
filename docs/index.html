@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">tangela</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.4.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.4.4</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -50,7 +50,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/paithiov909/tangela">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -89,7 +89,9 @@
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p>Basic usage:</p>
+<div id="basic-usage" class="section level3">
+<h3 class="hasAnchor">
+<a href="#basic-usage" class="anchor"></a>Basic usage</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>res &lt;-<span class="st"> </span>tangela<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/tangela/man/kuromoji.html">kuromoji</a></span>(<span class="st">"決して自分が選んだだけなのに、選ばれたような嬉しさや幸せをくれるのがデニムです"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(res[[<span class="dv">1</span>]])</span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="co">#&gt; $surface</span></span>
@@ -106,10 +108,14 @@
 <span id="cb2-14"><a href="#cb2-14"></a><span class="co">#&gt; </span></span>
 <span id="cb2-15"><a href="#cb2-15"></a><span class="co">#&gt; $is_user</span></span>
 <span id="cb2-16"><a href="#cb2-16"></a><span class="co">#&gt; [1] FALSE</span></span></code></pre></div>
-<p>Some examples which shows you how to use output of tangela:</p>
-<div id="ゲンシジン-ナル" class="section level3">
+</div>
+<div id="examples" class="section level3">
 <h3 class="hasAnchor">
-<a href="#%E3%82%B2%E3%83%B3%E3%82%B7%E3%82%B8%E3%83%B3-%E3%83%8A%E3%83%AB" class="anchor"></a>ゲンシジン ナル</h3>
+<a href="#examples" class="anchor"></a>Examples</h3>
+<p>Some more examples which shows you how to use output of tangela:</p>
+<div id="ゲンシジン-ナル" class="section level4">
+<h4 class="hasAnchor">
+<a href="#%E3%82%B2%E3%83%B3%E3%82%B7%E3%82%B8%E3%83%B3-%E3%83%8A%E3%83%AB" class="anchor"></a>ゲンシジン ナル</h4>
 <blockquote>
 <p>助詞を除いてカタコトの日本語に</p>
 </blockquote>
@@ -152,9 +158,9 @@
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">genshijin</span>(<span class="st">"メガネは顔の一部じゃない あなたはわたしの全てじゃない"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="co">#&gt; [1] "メガネ カオ ノ イチブ ジャ ナイ アナタ ワタシ ノ スベテ ジャ ナイ"</span></span></code></pre></div>
 </div>
-<div id="名詞をランダムにヒャッハァーに置換" class="section level3">
-<h3 class="hasAnchor">
-<a href="#%E5%90%8D%E8%A9%9E%E3%82%92%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E3%81%AB%E3%83%92%E3%83%A3%E3%83%83%E3%83%8F%E3%82%A1%E3%83%BC%E3%81%AB%E7%BD%AE%E6%8F%9B" class="anchor"></a>名詞をランダムに「ヒャッハァー！」に置換</h3>
+<div id="名詞をランダムにヒャッハァーに置換" class="section level4">
+<h4 class="hasAnchor">
+<a href="#%E5%90%8D%E8%A9%9E%E3%82%92%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E3%81%AB%E3%83%92%E3%83%A3%E3%83%83%E3%83%8F%E3%82%A1%E3%83%BC%E3%81%AB%E7%BD%AE%E6%8F%9B" class="anchor"></a>名詞をランダムに「ヒャッハァー！」に置換</h4>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>hyahhaaa &lt;-<span class="st"> </span><span class="cf">function</span>(text, <span class="dt">replacement =</span> <span class="st">"ヒャッハァーー！"</span>, <span class="dt">pos =</span> <span class="st">"名詞"</span>, <span class="dt">p =</span> <span class="fl">0.8</span>) {</span>
 <span id="cb5-2"><a href="#cb5-2"></a>  df &lt;-<span class="st"> </span>tangela<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/tangela/man/kuromoji.html">kuromoji</a></span>(text) <span class="op">%&gt;%</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="st">    </span>purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_dfr</a></span>(<span class="op">~</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(</span>
@@ -191,6 +197,7 @@
 <span id="cb5-34"><a href="#cb5-34"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">hyahhaaa</span>(<span class="st">"恋するだけが乙女じゃない 素直なだけがいい子じゃない"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="co">#&gt; [1] "恋するだけがヒャッハァーー！じゃない ヒャッハァーー！なだけがいいヒャッハァーー！じゃない"</span></span></code></pre></div>
+</div>
 </div>
 <div id="参考" class="section level3">
 <h3 class="hasAnchor">
@@ -273,6 +280,7 @@
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="#"><img src="https://img.shields.io/github/last-commit/paithiov909/tangela" alt="GitHub last commit"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
 <li><a href="https://github.com/paithiov909/tangela/blob/master/LICENSE"><img src="https://img.shields.io/github/license/paithiov909/tangela" alt="GitHub license"></a></li>
 </ul>
 </div>
