@@ -17,7 +17,7 @@ license](https://img.shields.io/github/license/paithiov909/tangela)](https://git
 
 ## System Requirements
 
-  - Java
+-   Java
 
 ## Installation
 
@@ -141,32 +141,32 @@ hyahhaaa <- function(text, replacement = "ヒャッハァーー！", pos = "名�
 
 ``` r
 hyahhaaa("恋するだけが乙女じゃない 素直なだけがいい子じゃない")
-#> [1] "恋するだけがヒャッハァーー！じゃない ヒャッハァーー！なだけがいい子じゃない"
+#> [1] "恋するだけがヒャッハァーー！じゃない ヒャッハァーー！なだけがいいヒャッハァーー！じゃない"
 ```
 
 ### 参考
 
 #### ゲンシジン ナル
 
-  - [【R言語】Rでゲンシジンになってみた -
+-   [【R言語】Rでゲンシジンになってみた -
     Qiita](https://qiita.com/taro_9674/items/e02119ab26376979a489)
-  - [オレ プログラム ウゴカス オマエ ゲンシジン ナル -
+-   [オレ プログラム ウゴカス オマエ ゲンシジン ナル -
     Qiita](https://qiita.com/Harusugi/items/f499e8707b36d0f570c4)
-  - [Mecabなど形態素解析で使うIPA品詞体系（品詞ID｜pos-id） - MS
+-   [Mecabなど形態素解析で使うIPA品詞体系（品詞ID｜pos-id） - MS
     Tech](http://miner.hatenablog.com/entry/323)
 
 #### 名詞をランダムに「ヒャッハァー！」に置換
 
-  - [日本語文の名詞をランダムに「ヒャッハァー！」に置換するＲスクリプト -
+-   [日本語文の名詞をランダムに「ヒャッハァー！」に置換するＲスクリプト -
     こにしき（言葉・日本社会・教育）](https://terasawat.hatenablog.jp/entry/20100711/1278861735)
 
-## Related Repositories
+## Related Works
 
-  - [s-u/rJava: R to Java interface](https://github.com/s-u/rJava)
-  - [atilika/kuromoji: Kuromoji is a self-contained and very easy to use
+-   [s-u/rJava: R to Java interface](https://github.com/s-u/rJava)
+-   [atilika/kuromoji: Kuromoji is a self-contained and very easy to use
     Japanese morphological analyzer designed for
     search](https://github.com/atilika/kuromoji)
-  - [yamano357/rJaNLP](https://github.com/yamano357/rJaNLP): Provides a
+-   [yamano357/rJaNLP](https://github.com/yamano357/rJaNLP): Provides a
     kuromoji interface (however, not active repository)
 
 ## Code of Conduct

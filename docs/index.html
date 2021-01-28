@@ -84,7 +84,7 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>remotes<span class="op">::</span><span class="kw"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"paithiov909/tangela"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"paithiov909/tangela"</span>)</span></code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
@@ -92,22 +92,22 @@
 <div id="basic-usage" class="section level3">
 <h3 class="hasAnchor">
 <a href="#basic-usage" class="anchor"></a>Basic Usage</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>res &lt;-<span class="st"> </span>tangela<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/tangela/man/kuromoji.html">kuromoji</a></span>(<span class="st">"決して自分が選んだだけなのに、選ばれたような嬉しさや幸せをくれるのがデニムです"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(res[[<span class="dv">1</span>]])</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#&gt; $surface</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co">#&gt; [1] "決して"</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#&gt; </span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="co">#&gt; $feature</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="co">#&gt; [1] "副詞,一般,*,*,*,*,決して,ケッシテ,ケッシテ"</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="co">#&gt; </span></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="co">#&gt; $is_know</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="co">#&gt; [1] TRUE</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="co">#&gt; </span></span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="co">#&gt; $is_unk</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="co">#&gt; [1] FALSE</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="co">#&gt; </span></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="co">#&gt; $is_user</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="co">#&gt; [1] FALSE</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> tangela<span class="sc">::</span><span class="fu">kuromoji</span>(<span class="st">"決して自分が選んだだけなのに、選ばれたような嬉しさや幸せをくれるのがデニムです"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res[[<span class="dv">1</span>]])</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $surface</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "決して"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $feature</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "副詞,一般,*,*,*,*,決して,ケッシテ,ケッシテ"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $is_know</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $is_unk</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] FALSE</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $is_user</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] FALSE</span></span></code></pre></div>
 </div>
 <div id="examples" class="section level3">
 <h3 class="hasAnchor">
@@ -119,84 +119,84 @@
 <blockquote>
 <p>助詞を除いてカタコトの日本語に</p>
 </blockquote>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>genshijin &lt;-<span class="st"> </span><span class="cf">function</span>(text) {</span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="st">`</span><span class="dt">%without%</span><span class="st">`</span> &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/negate.html">negate</a></span>(<span class="st">`</span><span class="dt">%in%</span><span class="st">`</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a>  df &lt;-<span class="st"> </span>tangela<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/tangela/man/kuromoji.html">kuromoji</a></span>(text) <span class="op">%&gt;%</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="st">    </span>purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_dfr</a></span>(<span class="op">~</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(</span>
-<span id="cb3-5"><a href="#cb3-5"></a>      <span class="dt">feature =</span> purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/pluck.html">pluck</a></span>(., <span class="st">"feature"</span>),</span>
-<span id="cb3-6"><a href="#cb3-6"></a>      <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>    )) <span class="op">%&gt;%</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="st">    </span>tidyr<span class="op">::</span><span class="kw"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span>(</span>
-<span id="cb3-9"><a href="#cb3-9"></a>      <span class="dt">col =</span> <span class="st">"feature"</span>,</span>
-<span id="cb3-10"><a href="#cb3-10"></a>      <span class="dt">into =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(</span>
-<span id="cb3-11"><a href="#cb3-11"></a>        <span class="st">"品詞"</span>,</span>
-<span id="cb3-12"><a href="#cb3-12"></a>        <span class="st">"品詞細分類1"</span>,</span>
-<span id="cb3-13"><a href="#cb3-13"></a>        <span class="st">"品詞細分類2"</span>,</span>
-<span id="cb3-14"><a href="#cb3-14"></a>        <span class="st">"品詞細分類3"</span>,</span>
-<span id="cb3-15"><a href="#cb3-15"></a>        <span class="st">"活用型"</span>,</span>
-<span id="cb3-16"><a href="#cb3-16"></a>        <span class="st">"活用形"</span>,</span>
-<span id="cb3-17"><a href="#cb3-17"></a>        <span class="st">"原形"</span>,</span>
-<span id="cb3-18"><a href="#cb3-18"></a>        <span class="st">"読み"</span>,</span>
-<span id="cb3-19"><a href="#cb3-19"></a>        <span class="st">"発音"</span></span>
-<span id="cb3-20"><a href="#cb3-20"></a>      ),</span>
-<span id="cb3-21"><a href="#cb3-21"></a>      <span class="dt">sep =</span> <span class="st">","</span>,</span>
-<span id="cb3-22"><a href="#cb3-22"></a>      <span class="dt">fill =</span> <span class="st">"right"</span></span>
-<span id="cb3-23"><a href="#cb3-23"></a>    )</span>
-<span id="cb3-24"><a href="#cb3-24"></a>  res &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span></span>
-<span id="cb3-25"><a href="#cb3-25"></a><span class="st">    </span>tidyr<span class="op">::</span><span class="kw"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span>() <span class="op">%&gt;%</span></span>
-<span id="cb3-26"><a href="#cb3-26"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="op">!!</span><span class="kw">sym</span>(<span class="st">"品詞細分類1"</span>) <span class="op">%without%</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(</span>
-<span id="cb3-27"><a href="#cb3-27"></a>      <span class="st">"格助詞"</span>,</span>
-<span id="cb3-28"><a href="#cb3-28"></a>      <span class="st">"係助詞"</span>,</span>
-<span id="cb3-29"><a href="#cb3-29"></a>      <span class="st">"終助詞"</span>,</span>
-<span id="cb3-30"><a href="#cb3-30"></a>      <span class="st">"副詞化"</span>,</span>
-<span id="cb3-31"><a href="#cb3-31"></a>      <span class="st">"特殊"</span></span>
-<span id="cb3-32"><a href="#cb3-32"></a>    )) <span class="op">%&gt;%</span></span>
-<span id="cb3-33"><a href="#cb3-33"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(<span class="st">"読み"</span>) <span class="op">%&gt;%</span></span>
-<span id="cb3-34"><a href="#cb3-34"></a><span class="st">    </span><span class="kw"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="dt">collapse =</span> <span class="st">" "</span>)</span>
-<span id="cb3-35"><a href="#cb3-35"></a>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span>(res)</span>
-<span id="cb3-36"><a href="#cb3-36"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">genshijin</span>(<span class="st">"メガネは顔の一部じゃない あなたはわたしの全てじゃない"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="co">#&gt; [1] "メガネ カオ ノ イチブ ジャ ナイ アナタ ワタシ ノ スベテ ジャ ナイ"</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>genshijin <span class="ot">&lt;-</span> <span class="cf">function</span>(text) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">%without%</span><span class="st">`</span> <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">negate</span>(<span class="st">`</span><span class="at">%in%</span><span class="st">`</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> tangela<span class="sc">::</span><span class="fu">kuromoji</span>(text) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    purrr<span class="sc">::</span><span class="fu">map_dfr</span>(<span class="sc">~</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">feature =</span> purrr<span class="sc">::</span><span class="fu">pluck</span>(., <span class="st">"feature"</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">%&gt;%</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">separate</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">col =</span> <span class="st">"feature"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">into =</span> <span class="fu">c</span>(</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"品詞"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"品詞細分類1"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"品詞細分類2"</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"品詞細分類3"</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"活用型"</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"活用形"</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"原形"</span>,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"読み"</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"発音"</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">sep =</span> <span class="st">","</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> <span class="st">"right"</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!!</span><span class="fu">sym</span>(<span class="st">"品詞細分類1"</span>) <span class="sc">%without%</span> <span class="fu">c</span>(</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>      <span class="st">"格助詞"</span>,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>      <span class="st">"係助詞"</span>,</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>      <span class="st">"終助詞"</span>,</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>      <span class="st">"副詞化"</span>,</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>      <span class="st">"特殊"</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">%&gt;%</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">pull</span>(<span class="st">"読み"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="at">collapse =</span> <span class="st">" "</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(res)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">genshijin</span>(<span class="st">"メガネは顔の一部じゃない あなたはわたしの全てじゃない"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "メガネ カオ ノ イチブ ジャ ナイ アナタ ワタシ ノ スベテ ジャ ナイ"</span></span></code></pre></div>
 </div>
 <div id="名詞をランダムにヒャッハァーに置換" class="section level4">
 <h4 class="hasAnchor">
 <a href="#%E5%90%8D%E8%A9%9E%E3%82%92%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E3%81%AB%E3%83%92%E3%83%A3%E3%83%83%E3%83%8F%E3%82%A1%E3%83%BC%E3%81%AB%E7%BD%AE%E6%8F%9B" class="anchor"></a>名詞をランダムに「ヒャッハァー！」に置換</h4>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>hyahhaaa &lt;-<span class="st"> </span><span class="cf">function</span>(text, <span class="dt">replacement =</span> <span class="st">"ヒャッハァーー！"</span>, <span class="dt">pos =</span> <span class="st">"名詞"</span>, <span class="dt">p =</span> <span class="fl">0.8</span>) {</span>
-<span id="cb5-2"><a href="#cb5-2"></a>  df &lt;-<span class="st"> </span>tangela<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/tangela/man/kuromoji.html">kuromoji</a></span>(text) <span class="op">%&gt;%</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="st">    </span>purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_dfr</a></span>(<span class="op">~</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(</span>
-<span id="cb5-4"><a href="#cb5-4"></a>      <span class="dt">surface =</span> purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/pluck.html">pluck</a></span>(., <span class="st">"surface"</span>),</span>
-<span id="cb5-5"><a href="#cb5-5"></a>      <span class="dt">feature =</span> purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/pluck.html">pluck</a></span>(., <span class="st">"feature"</span>),</span>
-<span id="cb5-6"><a href="#cb5-6"></a>      <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>    )) <span class="op">%&gt;%</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="st">    </span>tidyr<span class="op">::</span><span class="kw"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span>(</span>
-<span id="cb5-9"><a href="#cb5-9"></a>      <span class="dt">col =</span> <span class="st">"feature"</span>,</span>
-<span id="cb5-10"><a href="#cb5-10"></a>      <span class="dt">into =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(</span>
-<span id="cb5-11"><a href="#cb5-11"></a>        <span class="st">"品詞"</span>,</span>
-<span id="cb5-12"><a href="#cb5-12"></a>        <span class="st">"品詞細分類1"</span>,</span>
-<span id="cb5-13"><a href="#cb5-13"></a>        <span class="st">"品詞細分類2"</span>,</span>
-<span id="cb5-14"><a href="#cb5-14"></a>        <span class="st">"品詞細分類3"</span>,</span>
-<span id="cb5-15"><a href="#cb5-15"></a>        <span class="st">"活用型"</span>,</span>
-<span id="cb5-16"><a href="#cb5-16"></a>        <span class="st">"活用形"</span>,</span>
-<span id="cb5-17"><a href="#cb5-17"></a>        <span class="st">"原形"</span>,</span>
-<span id="cb5-18"><a href="#cb5-18"></a>        <span class="st">"読み"</span>,</span>
-<span id="cb5-19"><a href="#cb5-19"></a>        <span class="st">"発音"</span></span>
-<span id="cb5-20"><a href="#cb5-20"></a>      ),</span>
-<span id="cb5-21"><a href="#cb5-21"></a>      <span class="dt">sep =</span> <span class="st">","</span>,</span>
-<span id="cb5-22"><a href="#cb5-22"></a>      <span class="dt">fill =</span> <span class="st">"right"</span></span>
-<span id="cb5-23"><a href="#cb5-23"></a>    )</span>
-<span id="cb5-24"><a href="#cb5-24"></a>  res &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span></span>
-<span id="cb5-25"><a href="#cb5-25"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/rowwise.html">rowwise</a></span>() <span class="op">%&gt;%</span></span>
-<span id="cb5-26"><a href="#cb5-26"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">str =</span> dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span>(</span>
-<span id="cb5-27"><a href="#cb5-27"></a>      <span class="op">!!</span><span class="kw">sym</span>(<span class="st">"品詞"</span>) <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(pos) <span class="op">&amp;</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(<span class="dv">1</span>) <span class="op">&lt;=</span><span class="st"> </span>p,</span>
-<span id="cb5-28"><a href="#cb5-28"></a>      replacement,</span>
-<span id="cb5-29"><a href="#cb5-29"></a>      <span class="op">!!</span><span class="kw">sym</span>(<span class="st">"surface"</span>)</span>
-<span id="cb5-30"><a href="#cb5-30"></a>    )) <span class="op">%&gt;%</span></span>
-<span id="cb5-31"><a href="#cb5-31"></a><span class="st">    </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(<span class="st">"str"</span>) <span class="op">%&gt;%</span></span>
-<span id="cb5-32"><a href="#cb5-32"></a><span class="st">    </span><span class="kw"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="dt">collapse =</span> <span class="st">""</span>)</span>
-<span id="cb5-33"><a href="#cb5-33"></a>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span>(res)</span>
-<span id="cb5-34"><a href="#cb5-34"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">hyahhaaa</span>(<span class="st">"恋するだけが乙女じゃない 素直なだけがいい子じゃない"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="co">#&gt; [1] "恋するだけがヒャッハァーー！じゃない ヒャッハァーー！なだけがいい子じゃない"</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>hyahhaaa <span class="ot">&lt;-</span> <span class="cf">function</span>(text, <span class="at">replacement =</span> <span class="st">"ヒャッハァーー！"</span>, <span class="at">pos =</span> <span class="st">"名詞"</span>, <span class="at">p =</span> <span class="fl">0.8</span>) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> tangela<span class="sc">::</span><span class="fu">kuromoji</span>(text) <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    purrr<span class="sc">::</span><span class="fu">map_dfr</span>(<span class="sc">~</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">surface =</span> purrr<span class="sc">::</span><span class="fu">pluck</span>(., <span class="st">"surface"</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">feature =</span> purrr<span class="sc">::</span><span class="fu">pluck</span>(., <span class="st">"feature"</span>),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">%&gt;%</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">separate</span>(</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">col =</span> <span class="st">"feature"</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">into =</span> <span class="fu">c</span>(</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"品詞"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"品詞細分類1"</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"品詞細分類2"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"品詞細分類3"</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"活用型"</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"活用形"</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"原形"</span>,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"読み"</span>,</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"発音"</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">sep =</span> <span class="st">","</span>,</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> <span class="st">"right"</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">str =</span> dplyr<span class="sc">::</span><span class="fu">if_else</span>(</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>      <span class="sc">!!</span><span class="fu">sym</span>(<span class="st">"品詞"</span>) <span class="sc">%in%</span> <span class="fu">c</span>(pos) <span class="sc">&amp;</span> <span class="fu">runif</span>(<span class="dv">1</span>) <span class="sc">&lt;=</span> p,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>      replacement,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>      <span class="sc">!!</span><span class="fu">sym</span>(<span class="st">"surface"</span>)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">%&gt;%</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">pull</span>(<span class="st">"str"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="at">collapse =</span> <span class="st">""</span>)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(res)</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hyahhaaa</span>(<span class="st">"恋するだけが乙女じゃない 素直なだけがいい子じゃない"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "恋するだけがヒャッハァーー！じゃない ヒャッハァーー！なだけがいいヒャッハァーー！じゃない"</span></span></code></pre></div>
 </div>
 </div>
 <div id="参考" class="section level3">
@@ -220,9 +220,9 @@
 </div>
 </div>
 </div>
-<div id="related-repositories" class="section level2">
+<div id="related-works" class="section level2">
 <h2 class="hasAnchor">
-<a href="#related-repositories" class="anchor"></a>Related Repositories</h2>
+<a href="#related-works" class="anchor"></a>Related Works</h2>
 <ul>
 <li><a href="https://github.com/s-u/rJava">s-u/rJava: R to Java interface</a></li>
 <li><a href="https://github.com/atilika/kuromoji">atilika/kuromoji: Kuromoji is a self-contained and very easy to use Japanese morphological analyzer designed for search</a></li>

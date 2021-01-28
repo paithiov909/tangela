@@ -153,7 +153,7 @@ hyahhaaa("恋するだけが乙女じゃない 素直なだけがいい子じゃ
 
 - [日本語文の名詞をランダムに「ヒャッハァー！」に置換するＲスクリプト - こにしき（言葉・日本社会・教育）](https://terasawat.hatenablog.jp/entry/20100711/1278861735)
 
-## Related Repositories
+## Related Works
 
 - [s-u/rJava: R to Java interface](https://github.com/s-u/rJava)
 - [atilika/kuromoji: Kuromoji is a self-contained and very easy to use Japanese morphological analyzer designed for search](https://github.com/atilika/kuromoji)
