@@ -180,4 +180,5 @@ By contributing to this project, you agree to abide by its terms.
 
 MIT license.
 
-This software includes the works distributed under Apache License 2.0.
+This software includes the works distributed under [the Apache License,
+Version2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
