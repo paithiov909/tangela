@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# tangela
+# tangela <a href='https://paithiov909.github.io/tangela'><img src='https://raw.githack.com/paithiov909/tangela/main/man/figures/logo.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
 
@@ -182,3 +182,6 @@ MIT license.
 
 This software includes the works distributed under [the Apache License,
 Version2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
+
+Icons made by [Eucalyp](https://www.flaticon.com/authors/eucalyp) from
+[www.flaticon.com](https://www.flaticon.com/).
