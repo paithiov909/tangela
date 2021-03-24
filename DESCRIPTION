@@ -1,7 +1,7 @@
 Package: tangela
 Type: Package
 Title: rJava Interface to Kuromoji
-Version: 0.0.4-4
+Version: 0.0.5
 Authors@R: c(
     person("Akiru", "Kato", email = "paithiov909@gmail.com", role = c("aut", "cre")))
 Maintainer: Kato Akiru <paithiov909@gmail.com>
@@ -17,8 +17,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
     rJava,
+    rlang,
     stringi
 Suggests: 
     knitr,
-    rmarkdown,
-    tidyverse
+    rmarkdown

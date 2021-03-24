@@ -1,10 +1,8 @@
-#' Call Kuromoji Tokenizer
+#' Call kuromoji tokenizer
 #'
-#' @param str character scalar to be tokenized.
-#' @return list
+#' @param str Character scalar to be tokenized.
+#' @return list.
 #'
-#' @import rJava
-#' @importFrom stringi stri_enc_toutf8
 #' @export
 kuromoji <- function(str) {
   if (!is.character(str) || length(str) != 1L || is.na(str)) {

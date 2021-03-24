@@ -2,16 +2,16 @@
 % Please edit documentation in R/kuromoji.R
 \name{kuromoji}
 \alias{kuromoji}
-\title{Call Kuromoji Tokenizer}
+\title{Call kuromoji tokenizer}
 \usage{
 kuromoji(str)
 }
 \arguments{
-\item{str}{character scalar to be tokenized.}
+\item{str}{Character scalar to be tokenized.}
 }
 \value{
-list
+list.
 }
 \description{
-Call Kuromoji Tokenizer
+Call kuromoji tokenizer
 }

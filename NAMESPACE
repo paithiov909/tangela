@@ -3,4 +3,7 @@
 export(kuromoji)
 export(rebuild_tokenizer)
 import(rJava)
+importFrom(rlang,env)
+importFrom(rlang,env_bind)
+importFrom(rlang,env_get)
 importFrom(stringi,stri_enc_toutf8)

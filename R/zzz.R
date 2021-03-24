@@ -1,20 +1,21 @@
+#' Package internal environment
+#' @noRd
+#' @keywords internal
+.pkgenv <- rlang::env()
+
 #' Tokenizer instance
 #' @noRd
 #' @keywords internal
-Tokenizer <- (function() {
-  if (!exists("instance")) instance <- NULL
-  function(obj = NULL) {
-    if (!is.null(obj)) instance <<- obj
-    return(instance)
-  }
-})()
+Tokenizer <- function(obj = NULL) {
+  if (!is.null(obj)) rlang::env_bind(.pkgenv, "tokenizer" = obj)
+  return(rlang::env_get(.pkgenv, "tokenizer", default = NULL))
+}
 
-#' Initialize Kuromoji Tokenizer
+#' Initialize kuromoji tokenizer
 #'
-#' @param user_dic character scalar. file path to a user dictionary if any.
-#' @return returns kuromoji tokenizer instance invisibly.
+#' @param user_dic file path to a user dictionary if any.
+#' @return The stored kuromoji tokenizer instance is returned invisibly.
 #'
-#' @import rJava
 #' @export
 rebuild_tokenizer <- function(user_dic = "") {
   Builder <- rJava::J("org.atilika.kuromoji.Tokenizer")$builder()
@@ -27,13 +28,12 @@ rebuild_tokenizer <- function(user_dic = "") {
 #' @noRd
 #' @param libname libname
 #' @param pkgname pkgname
-#' @import rJava
 #' @keywords internal
 .onLoad <- function(libname, pkgname) {
   rJava::.jpackage(pkgname,
     morePaths = c("inst/java/kuromoji-0.7.7.jar"),
     lib.loc = libname
   )
-  # Initialize
+  ## Initialize
   rebuild_tokenizer()
 }

@@ -27,7 +27,7 @@ remotes::install_github("paithiov909/tangela")
 
 ## Usage
 
-### Basic Usage
+### Basic usage
 
 ``` r
 res <- tangela::kuromoji("決して自分が選んだだけなのに、選ばれたような嬉しさや幸せをくれるのがデニムです")
@@ -48,9 +48,7 @@ print(res[[1]])
 #> [1] FALSE
 ```
 
-### Examples
-
-Some more examples which shows you how to use output of tangela:
+### Showcase
 
 #### ゲンシジン ナル
 
@@ -82,7 +80,7 @@ genshijin <- function(text) {
     )
   res <- df %>%
     tidyr::drop_na() %>%
-    dplyr::filter(!!sym("品詞細分類1") %without% c(
+    dplyr::filter(!!rlang::sym("品詞細分類1") %without% c(
       "格助詞",
       "係助詞",
       "終助詞",
@@ -129,9 +127,9 @@ hyahhaaa <- function(text, replacement = "ヒャッハァーー！", pos = "名�
   res <- df %>%
     dplyr::rowwise() %>%
     dplyr::mutate(str = dplyr::if_else(
-      !!sym("品詞") %in% c(pos) & runif(1) <= p,
+      !!rlang::sym("品詞") %in% c(pos) & runif(1) <= p,
       replacement,
-      !!sym("surface")
+      !!rlang::sym("surface")
     )) %>%
     dplyr::pull("str") %>%
     paste(collapse = "")
@@ -141,7 +139,7 @@ hyahhaaa <- function(text, replacement = "ヒャッハァーー！", pos = "名�
 
 ``` r
 hyahhaaa("恋するだけが乙女じゃない 素直なだけがいい子じゃない")
-#> [1] "恋するだけがヒャッハァーー！じゃない ヒャッハァーー！なだけがいいヒャッハァーー！じゃない"
+#> [1] "恋するだけがヒャッハァーー！じゃない 素直なだけがいい子じゃない"
 ```
 
 ### 参考
@@ -159,15 +157,6 @@ hyahhaaa("恋するだけが乙女じゃない 素直なだけがいい子じゃ
 
 -   [日本語文の名詞をランダムに「ヒャッハァー！」に置換するＲスクリプト -
     こにしき（言葉・日本社会・教育）](https://terasawat.hatenablog.jp/entry/20100711/1278861735)
-
-## Related Works
-
--   [s-u/rJava: R to Java interface](https://github.com/s-u/rJava)
--   [atilika/kuromoji: Kuromoji is a self-contained and very easy to use
-    Japanese morphological analyzer designed for
-    search](https://github.com/atilika/kuromoji)
--   [yamano357/rJaNLP](https://github.com/yamano357/rJaNLP): Provides a
-    kuromoji interface (however, not active repository)
 
 ## Code of Conduct
 

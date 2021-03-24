@@ -2,16 +2,16 @@
 % Please edit documentation in R/zzz.R
 \name{rebuild_tokenizer}
 \alias{rebuild_tokenizer}
-\title{Initialize Kuromoji Tokenizer}
+\title{Initialize kuromoji tokenizer}
 \usage{
 rebuild_tokenizer(user_dic = "")
 }
 \arguments{
-\item{user_dic}{character scalar. file path to a user dictionary if any.}
+\item{user_dic}{file path to a user dictionary if any.}
 }
 \value{
-returns kuromoji tokenizer instance invisibly.
+The stored kuromoji tokenizer instance is returned invisibly.
 }
 \description{
-Initialize Kuromoji Tokenizer
+Initialize kuromoji tokenizer
 }
