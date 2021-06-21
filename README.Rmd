@@ -11,14 +11,13 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
-
 stopifnot(
-  require(magrittr),
-  require(tangela)
+  require(magrittr)
 )
+pkgload::load_all()
 ```
 
-# tangela <a href='https://paithiov909.github.io/tangela'><img src='https://raw.githack.com/paithiov909/tangela/main/man/figures/logo.png' align="right" height="139" /></a>
+# tangela <a href='https://paithiov909.github.io/tangela'><img src='https://rawcdn.githack.com/paithiov909/tangela/1eeac7579939bbd8de48bb81a2766549da18d61a/man/figures/logo.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
 [![GitHub last commit](https://img.shields.io/github/last-commit/paithiov909/tangela)](#)
@@ -150,10 +149,6 @@ hyahhaaa("恋するだけが乙女じゃない 素直なだけがいい子じゃ
 #### 名詞をランダムに「ヒャッハァー！」に置換
 
 - [日本語文の名詞をランダムに「ヒャッハァー！」に置換するＲスクリプト - こにしき（言葉・日本社会・教育）](https://terasawat.hatenablog.jp/entry/20100711/1278861735)
-
-## Code of Conduct
-
-Please note that the tangela project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
 
 ## License
 

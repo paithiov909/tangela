@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# tangela <a href='https://paithiov909.github.io/tangela'><img src='https://raw.githack.com/paithiov909/tangela/main/man/figures/logo.png' align="right" height="139" /></a>
+# tangela <a href='https://paithiov909.github.io/tangela'><img src='https://rawcdn.githack.com/paithiov909/tangela/1eeac7579939bbd8de48bb81a2766549da18d61a/man/figures/logo.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
 
@@ -139,7 +139,7 @@ hyahhaaa <- function(text, replacement = "ヒャッハァーー！", pos = "名�
 
 ``` r
 hyahhaaa("恋するだけが乙女じゃない 素直なだけがいい子じゃない")
-#> [1] "恋するだけがヒャッハァーー！じゃない 素直なだけがいい子じゃない"
+#> [1] "恋するだけがヒャッハァーー！じゃない ヒャッハァーー！なだけがいいヒャッハァーー！じゃない"
 ```
 
 ### 参考
@@ -157,13 +157,6 @@ hyahhaaa("恋するだけが乙女じゃない 素直なだけがいい子じゃ
 
 -   [日本語文の名詞をランダムに「ヒャッハァー！」に置換するＲスクリプト -
     こにしき（言葉・日本社会・教育）](https://terasawat.hatenablog.jp/entry/20100711/1278861735)
-
-## Code of Conduct
-
-Please note that the tangela project is released with a [Contributor
-Code of
-Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
-By contributing to this project, you agree to abide by its terms.
 
 ## License
 
