@@ -8,7 +8,7 @@
 [![GitHub last
 commit](https://img.shields.io/github/last-commit/paithiov909/tangela)](#)
 [![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+stable](https://img.shields.io/badge/lifecycle-stable.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![GitHub
 license](https://img.shields.io/github/license/paithiov909/tangela)](https://github.com/paithiov909/tangela/blob/master/LICENSE)
 <!-- badges: end -->
