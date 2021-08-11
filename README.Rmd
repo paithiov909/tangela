@@ -21,7 +21,7 @@ pkgload::load_all()
 
 <!-- badges: start -->
 [![GitHub last commit](https://img.shields.io/github/last-commit/paithiov909/tangela)](#)
-[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![GitHub license](https://img.shields.io/github/license/paithiov909/tangela)](https://github.com/paithiov909/tangela/blob/master/LICENSE)
 <!-- badges: end -->
 
