@@ -2,7 +2,14 @@
 #' @docType package
 #' @name tangela
 #' @import rJava
-#' @importFrom rlang env env_bind env_get
-#' @importFrom stringi stri_enc_toutf8
-#' @keywords internal
+#' @import dplyr
 "_PACKAGE"
+
+#' Pipe operator
+#'
+#' @name %>%
+#' @rdname pipe
+#' @keywords internal
+#' @export
+#' @usage lhs \%>\% rhs
+NULL

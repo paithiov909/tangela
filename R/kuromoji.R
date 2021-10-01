@@ -1,21 +1,28 @@
 #' Call kuromoji tokenizer
 #'
-#' @param str Character scalar to be tokenized.
-#' @return list.
+#' @param chr Character vector to be tokenized.
+#' @param split Logical.If true (by default), the function splits character vector
+#' into sentences using `tokenizers::tokenize_sentences` before analyzing them.
+#' @return List.
 #'
 #' @export
-kuromoji <- function(str) {
-  if (!is.character(str) || length(str) != 1L || is.na(str)) {
-    message("Invalid string provided. String must be a character scalar, not NA_character_.")
-    return(invisible(list()))
-  } else {
+kuromoji <- function(chr, split = TRUE) {
+  stopifnot(rlang::is_character(chr))
+  if (is.factor(chr) || any(is.na(chr))) rlang::abort("Invalid string provided. String must be a character scalar, not NA_character_.")
+
+  chr <- tidyr::replace_na(stringi::stri_enc_toutf8(chr), "")
+  if (split) {
+    chr <- purrr::flatten_chr(tokenizers::tokenize_sentences(chr))
+  }
+
+  res <- lapply(chr, function(elem) {
     tokens <- rJava::.jcall(
       Tokenizer(),
       "Ljava/util/List;",
       "tokenize",
-      stringi::stri_enc_toutf8(str)
+      elem
     )
-    res <- lapply(tokens, function(token) {
+    lapply(tokens, function(token) {
       surface <- token$getSurfaceForm()
       feature <- token$getAllFeatures()
       Encoding(surface) <- "UTF-8"
@@ -28,6 +35,7 @@ kuromoji <- function(str) {
         is_user = token$isUser()
       ))
     })
-    return(res)
-  }
+  })
+
+  return(res)
 }

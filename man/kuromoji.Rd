@@ -4,13 +4,16 @@
 \alias{kuromoji}
 \title{Call kuromoji tokenizer}
 \usage{
-kuromoji(str)
+kuromoji(chr, split = TRUE)
 }
 \arguments{
-\item{str}{Character scalar to be tokenized.}
+\item{chr}{Character vector to be tokenized.}
+
+\item{split}{Logical.If true (by default), the function splits character vector
+into sentences using \code{tokenizers::tokenize_sentences} before analyzing them.}
 }
 \value{
-list.
+List.
 }
 \description{
 Call kuromoji tokenizer

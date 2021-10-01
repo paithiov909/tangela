@@ -2,7 +2,12 @@ destination: docs
 
 url: https://paithiov909.github.io/tangela
 
-template:
-  package: preferably
-  params:
-    toggle: manual
+reference:
+  - title: "POS tagger"
+    contents:
+      - kuromoji
+      - rebuild_tokenizer
+  - title: "Utils"
+    contents:
+      - prettify
+      - pack

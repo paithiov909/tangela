@@ -13,150 +13,135 @@ stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecy
 license](https://img.shields.io/github/license/paithiov909/tangela)](https://github.com/paithiov909/tangela/blob/master/LICENSE)
 <!-- badges: end -->
 
-> rJava Interface to Kuromoji
+tangela is an rJava wrapper of atilika/kuromoji (bundled v0.7.7).
 
-## System Requirements
+[Kuromoji](https://github.com/atilika/kuromoji) is a “self-contained
+Japanese morphological analyzer” such that tangela only requires Java;
+It never has any other dependencies such as MeCab and its dictionaries.
 
--   Java
+## Usage
 
-## Installation
+### Installation
 
 ``` r
 remotes::install_github("paithiov909/tangela")
 ```
 
-## Usage
-
-### Basic usage
+### Call tagger
 
 ``` r
-res <- tangela::kuromoji("決して自分が選んだだけなのに、選ばれたような嬉しさや幸せをくれるのがデニムです")
-print(res[[1]])
-#> $surface
-#> [1] "決して"
-#> 
-#> $feature
-#> [1] "副詞,一般,*,*,*,*,決して,ケッシテ,ケッシテ"
-#> 
-#> $is_know
-#> [1] TRUE
-#> 
-#> $is_unk
-#> [1] FALSE
-#> 
-#> $is_user
-#> [1] FALSE
+res <- tangela::kuromoji(
+  "なぜ分かり合えないのか！？
+   なぜ貴様等は他を出し抜こうとするのか！？
+   ところできのこはあんな縦に長かったか！？"
+)
+str(res[[1]])
+#> List of 8
+#>  $ :List of 5
+#>   ..$ surface: chr "なぜ"
+#>   ..$ feature: chr "副詞,助詞類接続,*,*,*,*,なぜ,ナゼ,ナゼ"
+#>   ..$ is_know: logi TRUE
+#>   ..$ is_unk : logi FALSE
+#>   ..$ is_user: logi FALSE
+#>  $ :List of 5
+#>   ..$ surface: chr "分かり"
+#>   ..$ feature: chr "動詞,自立,*,*,五段・ラ行,連用形,分かる,ワカリ,ワカリ"
+#>   ..$ is_know: logi TRUE
+#>   ..$ is_unk : logi FALSE
+#>   ..$ is_user: logi FALSE
+#>  $ :List of 5
+#>   ..$ surface: chr "合え"
+#>   ..$ feature: chr "動詞,自立,*,*,一段,未然形,合える,アエ,アエ"
+#>   ..$ is_know: logi TRUE
+#>   ..$ is_unk : logi FALSE
+#>   ..$ is_user: logi FALSE
+#>  $ :List of 5
+#>   ..$ surface: chr "ない"
+#>   ..$ feature: chr "助動詞,*,*,*,特殊・ナイ,基本形,ない,ナイ,ナイ"
+#>   ..$ is_know: logi TRUE
+#>   ..$ is_unk : logi FALSE
+#>   ..$ is_user: logi FALSE
+#>  $ :List of 5
+#>   ..$ surface: chr "の"
+#>   ..$ feature: chr "名詞,非自立,一般,*,*,*,の,ノ,ノ"
+#>   ..$ is_know: logi TRUE
+#>   ..$ is_unk : logi FALSE
+#>   ..$ is_user: logi FALSE
+#>  $ :List of 5
+#>   ..$ surface: chr "か"
+#>   ..$ feature: chr "助詞,副助詞／並立助詞／終助詞,*,*,*,*,か,カ,カ"
+#>   ..$ is_know: logi TRUE
+#>   ..$ is_unk : logi FALSE
+#>   ..$ is_user: logi FALSE
+#>  $ :List of 5
+#>   ..$ surface: chr "！"
+#>   ..$ feature: chr "記号,一般,*,*,*,*,！,！,！"
+#>   ..$ is_know: logi TRUE
+#>   ..$ is_unk : logi FALSE
+#>   ..$ is_user: logi FALSE
+#>  $ :List of 5
+#>   ..$ surface: chr "？"
+#>   ..$ feature: chr "記号,一般,*,*,*,*,？,？,？"
+#>   ..$ is_know: logi TRUE
+#>   ..$ is_unk : logi FALSE
+#>   ..$ is_user: logi FALSE
 ```
 
-### Showcase
-
-#### ゲンシジン ナル
-
-> 助詞を除いてカタコトの日本語に
+### Prettify Output
 
 ``` r
-genshijin <- function(text) {
-  `%without%` <- purrr::negate(`%in%`)
-  df <- tangela::kuromoji(text) %>%
-    purrr::map_dfr(~ data.frame(
-      feature = purrr::pluck(., "feature"),
-      stringsAsFactors = FALSE
-    )) %>%
-    tidyr::separate(
-      col = "feature",
-      into = c(
-        "品詞",
-        "品詞細分類1",
-        "品詞細分類2",
-        "品詞細分類3",
-        "活用型",
-        "活用形",
-        "原形",
-        "読み",
-        "発音"
-      ),
-      sep = ",",
-      fill = "right"
-    )
-  res <- df %>%
-    tidyr::drop_na() %>%
-    dplyr::filter(!!rlang::sym("品詞細分類1") %without% c(
-      "格助詞",
-      "係助詞",
-      "終助詞",
-      "副詞化",
-      "特殊"
-    )) %>%
-    dplyr::pull("読み") %>%
-    paste(collapse = " ")
-  return(res)
-}
+res <- tangela::prettify(res)
+head(res)
+#>   sentence_id  token is_unk   POS1                     POS2 POS3 POS4
+#> 1           1   なぜ  FALSE   副詞               助詞類接続 <NA> <NA>
+#> 2           1 分かり  FALSE   動詞                     自立 <NA> <NA>
+#> 3           1   合え  FALSE   動詞                     自立 <NA> <NA>
+#> 4           1   ない  FALSE 助動詞                     <NA> <NA> <NA>
+#> 5           1     の  FALSE   名詞                   非自立 一般 <NA>
+#> 6           1     か  FALSE   助詞 副助詞／並立助詞／終助詞 <NA> <NA>
+#>   X5StageUse1 X5StageUse2 Original  Yomi1  Yomi2
+#> 1        <NA>        <NA>     なぜ   ナゼ   ナゼ
+#> 2  五段・ラ行      連用形   分かる ワカリ ワカリ
+#> 3        一段      未然形   合える   アエ   アエ
+#> 4  特殊・ナイ      基本形     ない   ナイ   ナイ
+#> 5        <NA>        <NA>       の     ノ     ノ
+#> 6        <NA>        <NA>       か     カ     カ
 ```
+
+The output has these columns.
+
+-   sentence\_id: 文番号
+-   token: 表層形（surface form）
+-   is\_unk: 未知語判定（whether or not the token is unknown word?）
+-   POS1\~POS4: 品詞, 品詞細分類1, 品詞細分類2, 品詞細分類3
+-   X5StageUse1: 活用型（ex. 五段, 下二段…）
+-   X5StageUse2: 活用形（ex. 連用形, 基本形…）
+-   Original: 原形（lemmatised form）
+-   Yomi1: 読み（readings）
+-   Yomi2: 発音（pronunciation)
+
+### Pack Output
 
 ``` r
-genshijin("メガネは顔の一部じゃない あなたはわたしの全てじゃない")
-#> [1] "メガネ カオ ノ イチブ ジャ ナイ アナタ ワタシ ノ スベテ ジャ ナイ"
+res <- tangela::kuromoji(
+  c("なぜ分かり合えないのか！？
+     なぜ貴様等は他を出し抜こうとするのか！？
+     ところできのこはあんな縦に長かったか！？",
+    "とにかく不様、そんな事ではあの小娘には勝てないわ。",
+    "そう、皆で協力して挑むのだ！",
+    "えー、まぁ今回はその件で伺いました。")
+) %>% 
+  tangela::prettify() %>% 
+  tangela::pack()
+print(res)
+#>   doc_id                                                             text
+#> 1      1                                なぜ 分かり 合え ない の か ！ ？
+#> 2      2            なぜ 貴様 等 は 他 を 出し抜こ う と する の か ！ ？
+#> 3      3               ところで きのこ は あんな 縦 に 長かっ た か ！ ？
+#> 4      4 とにかく 不様 、 そんな 事 で は あの 小娘 に は 勝て ない わ 。
+#> 5      5                           そう 、 皆 で 協力 し て 挑む の だ ！
+#> 6      6                  えー 、 まぁ 今回 は その 件 で 伺い まし た 。
 ```
-
-#### 名詞をランダムに「ヒャッハァー！」に置換
-
-``` r
-hyahhaaa <- function(text, replacement = "ヒャッハァーー！", pos = "名詞", p = 0.8) {
-  df <- tangela::kuromoji(text) %>%
-    purrr::map_dfr(~ data.frame(
-      surface = purrr::pluck(., "surface"),
-      feature = purrr::pluck(., "feature"),
-      stringsAsFactors = FALSE
-    )) %>%
-    tidyr::separate(
-      col = "feature",
-      into = c(
-        "品詞",
-        "品詞細分類1",
-        "品詞細分類2",
-        "品詞細分類3",
-        "活用型",
-        "活用形",
-        "原形",
-        "読み",
-        "発音"
-      ),
-      sep = ",",
-      fill = "right"
-    )
-  res <- df %>%
-    dplyr::rowwise() %>%
-    dplyr::mutate(str = dplyr::if_else(
-      !!rlang::sym("品詞") %in% c(pos) & runif(1) <= p,
-      replacement,
-      !!rlang::sym("surface")
-    )) %>%
-    dplyr::pull("str") %>%
-    paste(collapse = "")
-  return(res)
-}
-```
-
-``` r
-hyahhaaa("恋するだけが乙女じゃない 素直なだけがいい子じゃない")
-#> [1] "恋するだけがヒャッハァーー！じゃない ヒャッハァーー！なだけがいいヒャッハァーー！じゃない"
-```
-
-### 参考
-
-#### ゲンシジン ナル
-
--   [【R言語】Rでゲンシジンになってみた -
-    Qiita](https://qiita.com/taro_9674/items/e02119ab26376979a489)
--   [オレ プログラム ウゴカス オマエ ゲンシジン ナル -
-    Qiita](https://qiita.com/Harusugi/items/f499e8707b36d0f570c4)
--   [Mecabなど形態素解析で使うIPA品詞体系（品詞ID｜pos-id） - MS
-    Tech](http://miner.hatenablog.com/entry/323)
-
-#### 名詞をランダムに「ヒャッハァー！」に置換
-
--   [日本語文の名詞をランダムに「ヒャッハァー！」に置換するＲスクリプト -
-    こにしき（言葉・日本社会・教育）](https://terasawat.hatenablog.jp/entry/20100711/1278861735)
 
 ## License
 

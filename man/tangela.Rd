@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-An rJava interface to atilika/kuromoji (v0.7.7).
+An rJava wrapper of atilika/kuromoji (v0.7.7).
 }
 \seealso{
 Useful links:
@@ -22,4 +22,3 @@ Useful links:
 \strong{Maintainer}: Akiru Kato \email{paithiov909@gmail.com}
 
 }
-\keyword{internal}
