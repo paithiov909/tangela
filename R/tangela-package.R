@@ -3,6 +3,7 @@
 #' @name tangela
 #' @import rJava
 #' @import dplyr
+#' @keywords internal
 "_PACKAGE"
 
 #' Pipe operator
