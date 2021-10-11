@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pack prettified data.frame of tokens — pack • tangela</title>
+<title>Ngrams tokenizer — ngram_tokenizer • tangela</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,9 +46,8 @@
 
 
 
-<meta property="og:title" content="Pack prettified data.frame of tokens — pack" />
-<meta property="og:description" content="Pack prettified data.frame of tokens into a new data.frame of corpus
-compatible with the Text Interchange Formats." />
+<meta property="og:title" content="Ngrams tokenizer — ngram_tokenizer" />
+<meta property="og:description" content="Make an ngram tokenizer function." />
 <meta property="og:image" content="https://paithiov909.github.io/tangela/logo.png" />
 
 
@@ -117,50 +116,37 @@ compatible with the Text Interchange Formats." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Pack prettified data.frame of tokens</h1>
+    <h1>Ngrams tokenizer</h1>
     <small class="dont-index">Source: <a href='https://github.com/paithiov909/tangela/blob/master/R/pack.R'><code>R/pack.R</code></a></small>
-    <div class="hidden name"><code>pack.Rd</code></div>
+    <div class="hidden name"><code>ngram_tokenizer.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Pack prettified data.frame of tokens into a new data.frame of corpus
-compatible with the Text Interchange Formats.</p>
+    <p>Make an ngram tokenizer function.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>pack</span><span class='op'>(</span><span class='va'>df</span>, n <span class='op'>=</span> <span class='fl'>1L</span>, pull <span class='op'>=</span> <span class='st'>"token"</span>, sep <span class='op'>=</span> <span class='st'>"-"</span>, .collapse <span class='op'>=</span> <span class='st'>" "</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>ngram_tokenizer</span><span class='op'>(</span>n <span class='op'>=</span> <span class='fl'>1L</span>, skip_word_none <span class='op'>=</span> <span class='cn'>TRUE</span>, locale <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>df</th>
-      <td><p>Prettified data.frame of tokens.</p></td>
-    </tr>
-    <tr>
       <th>n</th>
-      <td><p>Integer internally passed to ngrams tokenizer function
-created of <code><a href='https://rdrr.io/pkg/rjavacmecab/man/ngram_tokenizer.html'>rjavacmecab::ngram_tokenizer()</a></code></p></td>
+      <td><p>Integer.</p></td>
     </tr>
     <tr>
-      <th>pull</th>
-      <td><p>Column to be packed into text or ngrams body. Default value is <code>token</code>.</p></td>
+      <th>skip_word_none</th>
+      <td><p>Logical.</p></td>
     </tr>
     <tr>
-      <th>sep</th>
-      <td><p>Character scalar internally used as the concatenator of ngrams.</p></td>
-    </tr>
-    <tr>
-      <th>.collapse</th>
-      <td><p>Character scalar passed to <code><a href='https://rdrr.io/pkg/stringi/man/stri_join.html'>stringi::stri_c()</a></code>.</p></td>
+      <th>locale</th>
+      <td><p>Character scalar. Pass a <code>NULL</code> or an empty string for default locale.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>data.frame</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><a href='https://github.com/ropensci/tif'>https://github.com/ropensci/tif</a></p></div>
+    <p>ngram tokenizer function</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

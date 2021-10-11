@@ -55,7 +55,7 @@ head(res)
 
 The output has these columns.
 
-- sentence_id: 文番号
+- doc_id: 文番号
 - token: 表層形（surface form）
 - is_unk: 未知語判定（whether or not the token is unknown word?）
 - POS1~POS4: 品詞, 品詞細分類1, 品詞細分類2, 品詞細分類3

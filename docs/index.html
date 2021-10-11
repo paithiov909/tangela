@@ -156,23 +156,23 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/prettify.html">prettify</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span>
-<span class="co">#&gt;   sentence_id  token is_unk   POS1                     POS2 POS3 POS4</span>
-<span class="co">#&gt; 1           1   なぜ  FALSE   副詞               助詞類接続 &lt;NA&gt; &lt;NA&gt;</span>
-<span class="co">#&gt; 2           1 分かり  FALSE   動詞                     自立 &lt;NA&gt; &lt;NA&gt;</span>
-<span class="co">#&gt; 3           1   合え  FALSE   動詞                     自立 &lt;NA&gt; &lt;NA&gt;</span>
-<span class="co">#&gt; 4           1   ない  FALSE 助動詞                     &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;</span>
-<span class="co">#&gt; 5           1     の  FALSE   名詞                   非自立 一般 &lt;NA&gt;</span>
-<span class="co">#&gt; 6           1     か  FALSE   助詞 副助詞／並立助詞／終助詞 &lt;NA&gt; &lt;NA&gt;</span>
-<span class="co">#&gt;   X5StageUse1 X5StageUse2 Original  Yomi1  Yomi2</span>
-<span class="co">#&gt; 1        &lt;NA&gt;        &lt;NA&gt;     なぜ   ナゼ   ナゼ</span>
-<span class="co">#&gt; 2  五段・ラ行      連用形   分かる ワカリ ワカリ</span>
-<span class="co">#&gt; 3        一段      未然形   合える   アエ   アエ</span>
-<span class="co">#&gt; 4  特殊・ナイ      基本形     ない   ナイ   ナイ</span>
-<span class="co">#&gt; 5        &lt;NA&gt;        &lt;NA&gt;       の     ノ     ノ</span>
-<span class="co">#&gt; 6        &lt;NA&gt;        &lt;NA&gt;       か     カ     カ</span></code></pre></div>
+<span class="co">#&gt;   doc_id  token is_unk   POS1                     POS2 POS3 POS4 X5StageUse1</span>
+<span class="co">#&gt; 1      1   なぜ  FALSE   副詞               助詞類接続 &lt;NA&gt; &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt; 2      1 分かり  FALSE   動詞                     自立 &lt;NA&gt; &lt;NA&gt;  五段・ラ行</span>
+<span class="co">#&gt; 3      1   合え  FALSE   動詞                     自立 &lt;NA&gt; &lt;NA&gt;        一段</span>
+<span class="co">#&gt; 4      1   ない  FALSE 助動詞                     &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;  特殊・ナイ</span>
+<span class="co">#&gt; 5      1     の  FALSE   名詞                   非自立 一般 &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt; 6      1     か  FALSE   助詞 副助詞／並立助詞／終助詞 &lt;NA&gt; &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt;   X5StageUse2 Original  Yomi1  Yomi2</span>
+<span class="co">#&gt; 1        &lt;NA&gt;     なぜ   ナゼ   ナゼ</span>
+<span class="co">#&gt; 2      連用形   分かる ワカリ ワカリ</span>
+<span class="co">#&gt; 3      未然形   合える   アエ   アエ</span>
+<span class="co">#&gt; 4      基本形     ない   ナイ   ナイ</span>
+<span class="co">#&gt; 5        &lt;NA&gt;       の     ノ     ノ</span>
+<span class="co">#&gt; 6        &lt;NA&gt;       か     カ     カ</span></code></pre></div>
 <p>The output has these columns.</p>
 <ul>
-<li>sentence_id: 文番号</li>
+<li>doc_id: 文番号</li>
 <li>token: 表層形（surface form）</li>
 <li>is_unk: 未知語判定（whether or not the token is unknown word?）</li>
 <li>POS1~POS4: 品詞, 品詞細分類1, 品詞細分類2, 品詞細分類3</li>
@@ -198,13 +198,13 @@
   <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/prettify.html">prettify</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/pack.html">pack</a></span><span class="op">(</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span>
-<span class="co">#&gt;   doc_id                                                             text</span>
-<span class="co">#&gt; 1      1                                なぜ 分かり 合え ない の か ！ ？</span>
-<span class="co">#&gt; 2      2            なぜ 貴様 等 は 他 を 出し抜こ う と する の か ！ ？</span>
-<span class="co">#&gt; 3      3               ところで きのこ は あんな 縦 に 長かっ た か ！ ？</span>
-<span class="co">#&gt; 4      4 とにかく 不様 、 そんな 事 で は あの 小娘 に は 勝て ない わ 。</span>
-<span class="co">#&gt; 5      5                           そう 、 皆 で 協力 し て 挑む の だ ！</span>
-<span class="co">#&gt; 6      6                  えー 、 まぁ 今回 は その 件 で 伺い まし た 。</span></code></pre></div>
+<span class="co">#&gt;   doc_id text</span>
+<span class="co">#&gt; 1      1 &lt;NA&gt;</span>
+<span class="co">#&gt; 2      2 &lt;NA&gt;</span>
+<span class="co">#&gt; 3      3 &lt;NA&gt;</span>
+<span class="co">#&gt; 4      4 &lt;NA&gt;</span>
+<span class="co">#&gt; 5      5 &lt;NA&gt;</span>
+<span class="co">#&gt; 6      6 &lt;NA&gt;</span></code></pre></div>
 </div>
 </div>
 <div id="license" class="section level2">

@@ -28,7 +28,7 @@ prettify <- function(list,
   )
   res <- purrr::imap_dfr(list, function(li, i) {
     purrr::map_dfr(li, ~ data.frame(
-      sentence_id = i,
+      doc_id = i,
       token = purrr::pluck(., "surface"),
       is_unk = purrr::pluck(., "is_unk"),
       Features = purrr::pluck(., "feature"),
