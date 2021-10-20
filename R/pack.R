@@ -7,7 +7,7 @@
 #'
 #' @param df Prettified data.frame of tokens.
 #' @param n Integer internally passed to ngrams tokenizer function
-#' created of \code{rjavacmecab::ngram_tokenizer()}
+#' created of \code{tangela::ngram_tokenizer()}
 #' @param pull Column to be packed into text or ngrams body. Default value is `token`.
 #' @param sep Character scalar internally used as the concatenator of ngrams.
 #' @param .collapse Character scalar passed to \code{stringi::stri_c()}.
@@ -16,7 +16,7 @@
 #' @export
 pack <- function(df, n = 1L, pull = "token", sep = "-", .collapse = " ") {
   res <- df %>%
-    dplyr::group_by(!!sym("doc_id")) %>%
+    dplyr::group_by(.data$doc_id) %>%
     dplyr::group_map(
       ~ ngram_tokenizer(n)(dplyr::pull(.x, {{ pull }}), sep = sep) %>%
         stringi::stri_c(collapse = .collapse)

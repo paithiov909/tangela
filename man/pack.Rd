@@ -10,7 +10,7 @@ pack(df, n = 1L, pull = "token", sep = "-", .collapse = " ")
 \item{df}{Prettified data.frame of tokens.}
 
 \item{n}{Integer internally passed to ngrams tokenizer function
-created of \code{rjavacmecab::ngram_tokenizer()}}
+created of \code{tangela::ngram_tokenizer()}}
 
 \item{pull}{Column to be packed into text or ngrams body. Default value is \code{token}.}
 
