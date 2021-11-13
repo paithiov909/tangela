@@ -35,7 +35,7 @@ prettify <- function(list,
       stringsAsFactors = FALSE
     ))
   }) %>%
-  tidyr::separate(
+    tidyr::separate(
       col = "Features",
       into = into,
       sep = ",",

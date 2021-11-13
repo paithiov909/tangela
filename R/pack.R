@@ -1,18 +1,32 @@
 #' Pack prettified data.frame of tokens
 #'
-#' Pack prettified data.frame of tokens into a new data.frame of corpus
-#' compatible with the Text Interchange Formats.
+#' Pack a prettified data.frame of tokens into a new data.frame of corpus,
+#' which is compatible with the Text Interchange Formats.
+#'
+#' @section Text Interchange Formats (TIF):
+#'
+#' The Text Interchange Formats (TIF) is a set of standards
+#' that allows R text analysis packages to target defined inputs and outputs
+#' for corpora, tokens, and document-term matrices.
+#'
+#' @section Valid data.frame of tokens:
+#'
+#' The prettified data.frame of tokens here is a data.frame object
+#' compatible with the TIF.
+#'
+#' A TIF valid data.frame of tokens are expected to have one unique key column (named `doc_id`)
+#' of each text and several feature columns of each tokens.
+#' The feature columns must contain at least `token` itself.
 #'
 #' @seealso \url{https://github.com/ropensci/tif}
 #'
-#' @param df Prettified data.frame of tokens.
+#' @param df A prettified data.frame of tokens.
 #' @param n Integer internally passed to ngrams tokenizer function
 #' created of \code{tangela::ngram_tokenizer()}
 #' @param pull Column to be packed into text or ngrams body. Default value is `token`.
 #' @param sep Character scalar internally used as the concatenator of ngrams.
-#' @param .collapse Character scalar passed to \code{stringi::stri_c()}.
-#' @return data.frame
-#'
+#' @param .collapse This argument is passed to \code{stringi::stri_join()}.
+#' @returns A data.frame.
 #' @export
 pack <- function(df, n = 1L, pull = "token", sep = "-", .collapse = " ") {
   res <- df %>%

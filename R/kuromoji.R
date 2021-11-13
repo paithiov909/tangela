@@ -2,7 +2,8 @@
 #'
 #' @param chr Character vector to be tokenized.
 #' @param split Logical.If true (by default), the function splits character vector
-#' into sentences using `tokenizers::tokenize_sentences` before analyzing them.
+#' into sentences using \code{stringi::stri_split_boudaries(type = "sentence")}
+#' before analyzing them.
 #' @return List.
 #'
 #' @export
@@ -12,7 +13,7 @@ kuromoji <- function(chr, split = TRUE) {
 
   chr <- tidyr::replace_na(stringi::stri_enc_toutf8(chr), "")
   if (split) {
-    chr <- purrr::flatten_chr(tokenizers::tokenize_sentences(chr))
+    chr <- purrr::flatten_chr(stringi::stri_split_boundaries(chr, type = "sentence"))
   }
 
   res <- lapply(chr, function(elem) {

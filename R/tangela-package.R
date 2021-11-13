@@ -2,7 +2,7 @@
 #' @docType package
 #' @name tangela
 #' @import rJava
-#' @import dplyr
+#' @importFrom magrittr %>%
 #' @keywords internal
 "_PACKAGE"
 

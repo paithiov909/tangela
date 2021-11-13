@@ -17,12 +17,12 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
     dplyr,
+    magrittr,
     purrr,
     rJava,
     rlang (>= 0.1.2),
     stringi,
-    tidyr,
-    tokenizers
+    tidyr
 Suggests: 
     roxygen2,
     knitr,

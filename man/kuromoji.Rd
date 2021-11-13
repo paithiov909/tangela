@@ -10,7 +10,8 @@ kuromoji(chr, split = TRUE)
 \item{chr}{Character vector to be tokenized.}
 
 \item{split}{Logical.If true (by default), the function splits character vector
-into sentences using \code{tokenizers::tokenize_sentences} before analyzing them.}
+into sentences using \code{stringi::stri_split_boudaries(type = "sentence")}
+before analyzing them.}
 }
 \value{
 List.
