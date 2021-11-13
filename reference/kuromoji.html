@@ -140,7 +140,8 @@
     <tr>
       <th>split</th>
       <td><p>Logical.If true (by default), the function splits character vector
-into sentences using <code><a href='https://lincolnmullen.com/software/tokenizers/reference/basic-tokenizers.html'>tokenizers::tokenize_sentences</a></code> before analyzing them.</p></td>
+into sentences using <code>stringi::stri_split_boudaries(type = "sentence")</code>
+before analyzing them.</p></td>
     </tr>
     </table>
 
