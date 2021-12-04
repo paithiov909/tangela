@@ -26,6 +26,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -38,18 +40,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">tangela</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.7</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -59,7 +55,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/paithiov909/tangela/">
+  <a href="https://github.com/paithiov909/tangela/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -76,34 +72,34 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="tangela-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#tangela-" class="anchor"></a>tangela <a href="https://paithiov909.github.io/tangela"><img src="https://rawcdn.githack.com/paithiov909/tangela/1eeac7579939bbd8de48bb81a2766549da18d61a/man/figures/logo.png" align="right" height="139"></a>
+<div class="section level1">
+<div class="page-header"><h1 id="tangela-">tangela <a href="https://paithiov909.github.io/tangela"><img src="https://rawcdn.githack.com/paithiov909/tangela/1eeac7579939bbd8de48bb81a2766549da18d61a/reference/figures/logo.png" align="right" height="139"></a>
+<a class="anchor" aria-label="anchor" href="#tangela-"></a>
 </h1></div>
 <!-- badges: start -->
 
 <p>tangela is an rJava wrapper of atilika/kuromoji (bundled v0.7.7).</p>
-<p><a href="https://github.com/atilika/kuromoji">Kuromoji</a> is a “self-contained Japanese morphological analyzer” such that tangela only requires Java; It never has any other dependencies such as MeCab and its dictionaries.</p>
-<div id="usage" class="section level2">
-<h2 class="hasAnchor">
-<a href="#usage" class="anchor"></a>Usage</h2>
-<div id="installation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h3>
+<p><a href="https://github.com/atilika/kuromoji" class="external-link">Kuromoji</a> is a “self-contained Japanese morphological analyzer” such that tangela only requires Java; It never has any other dependencies such as MeCab and its dictionaries.</p>
+<div class="section level2">
+<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+</h2>
+<div class="section level3">
+<h3 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"paithiov909/tangela"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="call-tagger" class="section level3">
-<h3 class="hasAnchor">
-<a href="#call-tagger" class="anchor"></a>Call tagger</h3>
+<div class="section level3">
+<h3 id="call-tagger">Call tagger<a class="anchor" aria-label="anchor" href="#call-tagger"></a>
+</h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/kuromoji.html">kuromoji</a></span><span class="op">(</span>
   <span class="st">"なぜ分かり合えないのか！？
    なぜ貴様等は他を出し抜こうとするのか！？
    ところできのこはあんな縦に長かったか！？"</span>
 <span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">res</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
-<span class="co">#&gt; List of 8</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">res</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
+<span class="co">#&gt; List of 35</span>
 <span class="co">#&gt;  $ :List of 5</span>
 <span class="co">#&gt;   ..$ surface: chr "なぜ"</span>
 <span class="co">#&gt;   ..$ feature: chr "副詞,助詞類接続,*,*,*,*,なぜ,ナゼ,ナゼ"</span>
@@ -151,14 +147,176 @@
 <span class="co">#&gt;   ..$ feature: chr "記号,一般,*,*,*,*,？,？,？"</span>
 <span class="co">#&gt;   ..$ is_know: logi TRUE</span>
 <span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "\n   "</span>
+<span class="co">#&gt;   ..$ feature: chr "記号,空白,*,*,*,*,*"</span>
+<span class="co">#&gt;   ..$ is_know: logi FALSE</span>
+<span class="co">#&gt;   ..$ is_unk : logi TRUE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "なぜ"</span>
+<span class="co">#&gt;   ..$ feature: chr "副詞,助詞類接続,*,*,*,*,なぜ,ナゼ,ナゼ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "貴様"</span>
+<span class="co">#&gt;   ..$ feature: chr "名詞,一般,*,*,*,*,貴様,キサマ,キサマ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "等"</span>
+<span class="co">#&gt;   ..$ feature: chr "名詞,接尾,一般,*,*,*,等,トウ,トー"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "は"</span>
+<span class="co">#&gt;   ..$ feature: chr "助詞,係助詞,*,*,*,*,は,ハ,ワ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "他"</span>
+<span class="co">#&gt;   ..$ feature: chr "名詞,一般,*,*,*,*,他,タ,タ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "を"</span>
+<span class="co">#&gt;   ..$ feature: chr "助詞,格助詞,一般,*,*,*,を,ヲ,ヲ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "出し抜こ"</span>
+<span class="co">#&gt;   ..$ feature: chr "動詞,自立,*,*,五段・カ行イ音便,未然ウ接続,出し抜く,ダシヌコ,ダシヌコ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "う"</span>
+<span class="co">#&gt;   ..$ feature: chr "助動詞,*,*,*,不変化型,基本形,う,ウ,ウ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "と"</span>
+<span class="co">#&gt;   ..$ feature: chr "助詞,格助詞,一般,*,*,*,と,ト,ト"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "する"</span>
+<span class="co">#&gt;   ..$ feature: chr "動詞,自立,*,*,サ変・スル,基本形,する,スル,スル"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "の"</span>
+<span class="co">#&gt;   ..$ feature: chr "名詞,非自立,一般,*,*,*,の,ノ,ノ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "か"</span>
+<span class="co">#&gt;   ..$ feature: chr "助詞,副助詞／並立助詞／終助詞,*,*,*,*,か,カ,カ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "！"</span>
+<span class="co">#&gt;   ..$ feature: chr "記号,一般,*,*,*,*,！,！,！"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "？"</span>
+<span class="co">#&gt;   ..$ feature: chr "記号,一般,*,*,*,*,？,？,？"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "\n   "</span>
+<span class="co">#&gt;   ..$ feature: chr "記号,空白,*,*,*,*,*"</span>
+<span class="co">#&gt;   ..$ is_know: logi FALSE</span>
+<span class="co">#&gt;   ..$ is_unk : logi TRUE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "ところで"</span>
+<span class="co">#&gt;   ..$ feature: chr "接続詞,*,*,*,*,*,ところで,トコロデ,トコロデ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "きのこ"</span>
+<span class="co">#&gt;   ..$ feature: chr "名詞,一般,*,*,*,*,きのこ,キノコ,キノコ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "は"</span>
+<span class="co">#&gt;   ..$ feature: chr "助詞,係助詞,*,*,*,*,は,ハ,ワ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "あんな"</span>
+<span class="co">#&gt;   ..$ feature: chr "連体詞,*,*,*,*,*,あんな,アンナ,アンナ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "縦"</span>
+<span class="co">#&gt;   ..$ feature: chr "名詞,一般,*,*,*,*,縦,タテ,タテ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "に"</span>
+<span class="co">#&gt;   ..$ feature: chr "助詞,副詞化,*,*,*,*,に,ニ,ニ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "長かっ"</span>
+<span class="co">#&gt;   ..$ feature: chr "形容詞,自立,*,*,形容詞・アウオ段,連用タ接続,長い,ナガカッ,ナガカッ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "た"</span>
+<span class="co">#&gt;   ..$ feature: chr "助動詞,*,*,*,特殊・タ,基本形,た,タ,タ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "か"</span>
+<span class="co">#&gt;   ..$ feature: chr "助詞,副助詞／並立助詞／終助詞,*,*,*,*,か,カ,カ"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "！"</span>
+<span class="co">#&gt;   ..$ feature: chr "記号,一般,*,*,*,*,！,！,！"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
+<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
+<span class="co">#&gt;  $ :List of 5</span>
+<span class="co">#&gt;   ..$ surface: chr "？"</span>
+<span class="co">#&gt;   ..$ feature: chr "記号,一般,*,*,*,*,？,？,？"</span>
+<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
+<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
 <span class="co">#&gt;   ..$ is_user: logi FALSE</span></code></pre></div>
 </div>
-<div id="prettify-output" class="section level3">
-<h3 class="hasAnchor">
-<a href="#prettify-output" class="anchor"></a>Prettify Output</h3>
+<div class="section level3">
+<h3 id="prettify-output">Prettify Output<a class="anchor" aria-label="anchor" href="#prettify-output"></a>
+</h3>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/prettify.html">prettify</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span>
 <span class="co">#&gt;   doc_id  token is_unk   POS1                     POS2 POS3 POS4 X5StageUse1</span>
 <span class="co">#&gt; 1      1   なぜ  FALSE   副詞               助詞類接続 &lt;NA&gt; &lt;NA&gt;        &lt;NA&gt;</span>
 <span class="co">#&gt; 2      1 分かり  FALSE   動詞                     自立 &lt;NA&gt; &lt;NA&gt;  五段・ラ行</span>
@@ -186,83 +344,97 @@
 <li>Yomi2: 発音（pronunciation)</li>
 </ul>
 </div>
-<div id="pack-output" class="section level3">
-<h3 class="hasAnchor">
-<a href="#pack-output" class="anchor"></a>Pack Output</h3>
+<div class="section level3">
+<h3 id="pack-output">Pack Output<a class="anchor" aria-label="anchor" href="#pack-output"></a>
+</h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/kuromoji.html">kuromoji</a></span><span class="op">(</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"なぜ分かり合えないのか！？
+  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"なぜ分かり合えないのか！？
      なぜ貴様等は他を出し抜こうとするのか！？
      ところできのこはあんな縦に長かったか！？"</span>,
     <span class="st">"とにかく不様、そんな事ではあの小娘には勝てないわ。"</span>,
     <span class="st">"そう、皆で協力して挑むのだ！"</span>,
     <span class="st">"えー、まぁ今回はその件で伺いました。"</span><span class="op">)</span>
-<span class="op">)</span> <span class="op"><a href="reference/%&gt;%.html">%&gt;%</a></span> 
-  <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/prettify.html">prettify</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="reference/%&gt;%.html">%&gt;%</a></span> 
+<span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/prettify.html">prettify</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> 
   <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/pack.html">pack</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span>
-<span class="co">#&gt;   doc_id                                                         text</span>
-<span class="co">#&gt; 1      1                               なぜ 分 か り 合 え ない の か</span>
-<span class="co">#&gt; 2      2            なぜ 貴様 等 は 他 を 出し 抜 こ う と する の か</span>
-<span class="co">#&gt; 3      3               ところで きのこ は あんな 縦 に 長 か っ た か</span>
-<span class="co">#&gt; 4      4 とにかく 不 様 そんな 事 で は あの 小娘 に は 勝 て ない わ</span>
-<span class="co">#&gt; 5      5                             そう 皆 で 協力 し て 挑む の だ</span>
-<span class="co">#&gt; 6      6                    えー まぁ 今回 は その 件 で 伺い まし た</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span>
+<span class="co">#&gt;   doc_id</span>
+<span class="co">#&gt; 1      1</span>
+<span class="co">#&gt; 2      2</span>
+<span class="co">#&gt; 3      3</span>
+<span class="co">#&gt; 4      4</span>
+<span class="co">#&gt;                                                                                                                                                         text</span>
+<span class="co">#&gt; 1 なぜ 分かり 合え ない の か ！ ？ \n      なぜ 貴様 等 は 他 を 出し抜こ う と する の か ！ ？ \n      ところで きのこ は あんな 縦 に 長かっ た か ！ ？</span>
+<span class="co">#&gt; 2                                                                                           とにかく 不様 、 そんな 事 で は あの 小娘 に は 勝て ない わ 。</span>
+<span class="co">#&gt; 3                                                                                                                     そう 、 皆 で 協力 し て 挑む の だ ！</span>
+<span class="co">#&gt; 4                                                                                                            えー 、 まぁ 今回 は その 件 で 伺い まし た 。</span></code></pre></div>
 </div>
 </div>
-<div id="license" class="section level2">
-<h2 class="hasAnchor">
-<a href="#license" class="anchor"></a>License</h2>
+<div class="section level2">
+<h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
+</h2>
 <p>MIT license.</p>
-<p>This software includes the works distributed under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">the Apache License, Version2.0</a>.</p>
-<p>Icons made by <a href="https://www.flaticon.com/authors/eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a>.</p>
+<p>This software includes the works distributed under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" class="external-link">the Apache License, Version2.0</a>.</p>
+<p>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" class="external-link">Eucalyp</a> from <a href="https://www.flaticon.com/" class="external-link">www.flaticon.com</a>.</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/paithiov909/tangela/">https://​github.com/​paithiov909/​tangela/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/paithiov909/tangela/issues">https://​github.com/​paithiov909/​tangela/​issues</a>
-</li>
+<li><a href="https://github.com/paithiov909/tangela/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/paithiov909/tangela/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
+<a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
 </li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing tangela</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Akiru Kato <br><small class="roles"> Author, maintainer </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="#"><img src="https://img.shields.io/github/last-commit/paithiov909/tangela" alt="GitHub last commit"></a></li>
-<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable"><img src="https://img.shields.io/badge/lifecycle-stable-green.svg" alt="Lifecycle: stable"></a></li>
-<li><a href="https://github.com/paithiov909/tangela/blob/master/LICENSE"><img src="https://img.shields.io/github/license/paithiov909/tangela" alt="GitHub license"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-green.svg" alt="Lifecycle: stable"></a></li>
+<li><a href="https://github.com/paithiov909/tangela/blob/master/LICENSE" class="external-link"><img src="https://img.shields.io/github/license/paithiov909/tangela" alt="GitHub license"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Akiru Kato.</p>
+  <p></p>
+<p>Developed by Akiru Kato.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>
@@ -270,6 +442,8 @@
 
   
 
+
+  
 
   </body>
 </html>
