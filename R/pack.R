@@ -64,7 +64,7 @@ pack <- function(df, n = 1L, pull = "token", sep = "-", .collapse = " ") {
 #' @return ngram tokenizer function
 #'
 #' @export
-ngram_tokenizer <- function(n = 1L, skip_word_none = TRUE, locale = NULL) {
+ngram_tokenizer <- function(n = 1L, skip_word_none = FALSE, locale = NULL) {
   stopifnot(is.numeric(n), is.finite(n), n > 0)
 
   options <- stringi::stri_opts_brkiter(
