@@ -1,3 +1,7 @@
+# tangela 0.0.8
+
+* Relicense as the Apache License, Version 2.0.
+
 # tangela 0.0.7
 
 * Added a `NEWS.md` file to track changes to the package.

@@ -7,7 +7,8 @@
 
 [![GitHub last
 commit](https://img.shields.io/github/last-commit/paithiov909/tangela)](#)
-[![tangela status badge](https://paithiov909.r-universe.dev/badges/tangela)](https://paithiov909.r-universe.dev)
+[![tangela status
+badge](https://paithiov909.r-universe.dev/badges/tangela)](https://paithiov909.r-universe.dev)
 [![GitHub
 license](https://img.shields.io/github/license/paithiov909/tangela)](https://github.com/paithiov909/tangela/blob/master/LICENSE)
 <!-- badges: end -->
@@ -309,7 +310,21 @@ print(res)
 
 ## License
 
-MIT license.
+Copyright 2022 Akiru Kato
+
+Licensed under the Apache License, Version 2.0 (the “License”); you may
+not use this file except in compliance with the License.
+
+You may obtain a copy of the License at
+
+<http://www.apache.org/licenses/LICENSE-2.0>
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an “AS IS” BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+See the License for the specific language governing permissions and
+limitations under the License.
 
 This software includes the works distributed under [the Apache License,
 Version2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
