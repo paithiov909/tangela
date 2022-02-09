@@ -10,7 +10,7 @@ commit](https://img.shields.io/github/last-commit/paithiov909/tangela)](#)
 [![tangela status
 badge](https://paithiov909.r-universe.dev/badges/tangela)](https://paithiov909.r-universe.dev)
 [![GitHub
-license](https://img.shields.io/github/license/paithiov909/tangela)](https://github.com/paithiov909/tangela/blob/main/LICENSE.md)
+license](https://img.shields.io/github/license/paithiov909/tangela)](https://github.com/paithiov909/tangela/blob/main/LICENSE)
 <!-- badges: end -->
 
 tangela is an rJava wrapper of atilika/kuromoji (bundled v0.7.7).
