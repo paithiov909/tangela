@@ -14,4 +14,3 @@ reference:
     contents:
       - prettify
       - pack
-      - ngram_tokenizer

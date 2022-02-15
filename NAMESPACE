@@ -2,7 +2,6 @@
 
 export("%>%")
 export(kuromoji)
-export(ngram_tokenizer)
 export(pack)
 export(prettify)
 export(rebuild_tokenizer)

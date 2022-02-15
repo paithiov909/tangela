@@ -1,6 +1,7 @@
 # tangela 0.0.8
 
 * Relicense as the Apache License, Version 2.0.
+* Clean dependencies.
 
 # tangela 0.0.7
 
