@@ -4,7 +4,7 @@
     <loc>https://paithiov909.github.io/tangela/404.html</loc>
   </url>
   <url>
-    <loc>https://paithiov909.github.io/tangela/LICENSE-text.html</loc>
+    <loc>https://paithiov909.github.io/tangela/LICENSE.html</loc>
   </url>
   <url>
     <loc>https://paithiov909.github.io/tangela/authors.html</loc>
@@ -22,9 +22,6 @@
     <loc>https://paithiov909.github.io/tangela/reference/kuromoji.html</loc>
   </url>
   <url>
-    <loc>https://paithiov909.github.io/tangela/reference/ngram_tokenizer.html</loc>
-  </url>
-  <url>
     <loc>https://paithiov909.github.io/tangela/reference/pack.html</loc>
   </url>
   <url>
@@ -38,8 +35,5 @@
   </url>
   <url>
     <loc>https://paithiov909.github.io/tangela/reference/tangela.html</loc>
-  </url>
-  <url>
-    <loc>https://paithiov909.github.io/tangela/reference/tidyeval.html</loc>
   </url>
 </urlset>
