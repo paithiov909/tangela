@@ -4,6 +4,7 @@ Title: rJava Interface to Kuromoji
 Version: 0.0.8
 Authors@R: 
     person("Akiru", "Kato", , "paithiov909@gmail.com", role = c("aut", "cre"))
+Maintainer: Akiru Kato <paithiov909@gmail.com>
 Description: An rJava wrapper of atilika/kuromoji (v0.7.7).
 License: Apache License (>= 2)
 URL: https://github.com/paithiov909/tangela
