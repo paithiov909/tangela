@@ -6,12 +6,3 @@
 #' @importFrom rlang expr enquo enquos sym syms .data := as_name as_label
 #' @keywords internal
 "_PACKAGE"
-
-#' Pipe operator
-#'
-#' @name %>%
-#' @rdname pipe
-#' @keywords internal
-#' @export
-#' @usage lhs \%>\% rhs
-NULL
