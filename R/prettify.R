@@ -26,7 +26,7 @@ prettify <- function(list,
     is.list(list),
     is.character(sep)
   )
-  res <- purrr::imap_dfr(list, function(li, i) {
+  purrr::imap_dfr(list, function(li, i) {
     purrr::map_dfr(li, ~ data.frame(
       doc_id = i,
       token = purrr::pluck(., "surface"),
@@ -42,5 +42,4 @@ prettify <- function(list,
       fill = "right"
     ) %>%
     dplyr::mutate_if(is.character, ~ dplyr::na_if(., "*"))
-  return(res)
 }

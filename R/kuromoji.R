@@ -6,7 +6,9 @@
 #' @export
 kuromoji <- function(chr) {
   stopifnot(rlang::is_character(chr))
-  if (is.factor(chr) || any(is.na(chr))) rlang::abort("Invalid string provided. String must be a character scalar, not NA_character_.")
+  if (is.factor(chr) || any(is.na(chr))) {
+    rlang::abort("Invalid string provided. String must be a character scalar, not NA_character_.")
+  }
 
   # keep names
   nm <- names(chr)
@@ -27,15 +29,15 @@ kuromoji <- function(chr) {
       feature <- token$getAllFeatures()
       Encoding(surface) <- "UTF-8"
       Encoding(feature) <- "UTF-8"
-      return(list(
+      list(
         surface = surface,
         feature = feature,
         is_know = token$isKnown(),
         is_unk = token$isUnknown(),
         is_user = token$isUser()
-      ))
+      )
     })
   })
 
-  return(purrr::set_names(res, nm))
+  purrr::set_names(res, nm)
 }

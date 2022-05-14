@@ -14,7 +14,6 @@ Depends:
 Imports: 
     audubon,
     dplyr,
-    magrittr,
     purrr,
     rJava,
     rlang (>= 0.1.2),
