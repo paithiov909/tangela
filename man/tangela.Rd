@@ -6,7 +6,7 @@
 \alias{tangela-package}
 \title{tangela: rJava Interface to Kuromoji}
 \description{
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
 An rJava wrapper of atilika/kuromoji (v0.7.7).
 }
