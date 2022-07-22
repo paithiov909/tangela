@@ -14,8 +14,8 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link href="deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="rJava Interface to Kuromoji">
 <meta property="og:description" content="An rJava wrapper of atilika/kuromoji (v0.7.7).">
@@ -83,88 +83,88 @@
 <h3 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"paithiov909/tangela"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"paithiov909/tangela"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="call-tagger">Call tagger<a class="anchor" aria-label="anchor" href="#call-tagger"></a>
 </h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/kuromoji.html">kuromoji</a></span><span class="op">(</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"なぜ分かり合えないのか！？"</span>,
-    <span class="st">"なぜ貴様等は他を出し抜こうとするのか！？"</span>,
-    <span class="st">"ところできのこはあんな縦に長かったか！？"</span><span class="op">)</span>
-<span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">res</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
-<span class="co">#&gt; List of 8</span>
-<span class="co">#&gt;  $ :List of 5</span>
-<span class="co">#&gt;   ..$ surface: chr "なぜ"</span>
-<span class="co">#&gt;   ..$ feature: chr "副詞,助詞類接続,*,*,*,*,なぜ,ナゼ,ナゼ"</span>
-<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
-<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
-<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
-<span class="co">#&gt;  $ :List of 5</span>
-<span class="co">#&gt;   ..$ surface: chr "分かり"</span>
-<span class="co">#&gt;   ..$ feature: chr "動詞,自立,*,*,五段・ラ行,連用形,分かる,ワカリ,ワカリ"</span>
-<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
-<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
-<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
-<span class="co">#&gt;  $ :List of 5</span>
-<span class="co">#&gt;   ..$ surface: chr "合え"</span>
-<span class="co">#&gt;   ..$ feature: chr "動詞,自立,*,*,一段,未然形,合える,アエ,アエ"</span>
-<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
-<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
-<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
-<span class="co">#&gt;  $ :List of 5</span>
-<span class="co">#&gt;   ..$ surface: chr "ない"</span>
-<span class="co">#&gt;   ..$ feature: chr "助動詞,*,*,*,特殊・ナイ,基本形,ない,ナイ,ナイ"</span>
-<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
-<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
-<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
-<span class="co">#&gt;  $ :List of 5</span>
-<span class="co">#&gt;   ..$ surface: chr "の"</span>
-<span class="co">#&gt;   ..$ feature: chr "名詞,非自立,一般,*,*,*,の,ノ,ノ"</span>
-<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
-<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
-<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
-<span class="co">#&gt;  $ :List of 5</span>
-<span class="co">#&gt;   ..$ surface: chr "か"</span>
-<span class="co">#&gt;   ..$ feature: chr "助詞,副助詞／並立助詞／終助詞,*,*,*,*,か,カ,カ"</span>
-<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
-<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
-<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
-<span class="co">#&gt;  $ :List of 5</span>
-<span class="co">#&gt;   ..$ surface: chr "！"</span>
-<span class="co">#&gt;   ..$ feature: chr "記号,一般,*,*,*,*,！,！,！"</span>
-<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
-<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
-<span class="co">#&gt;   ..$ is_user: logi FALSE</span>
-<span class="co">#&gt;  $ :List of 5</span>
-<span class="co">#&gt;   ..$ surface: chr "？"</span>
-<span class="co">#&gt;   ..$ feature: chr "記号,一般,*,*,*,*,？,？,？"</span>
-<span class="co">#&gt;   ..$ is_know: logi TRUE</span>
-<span class="co">#&gt;   ..$ is_unk : logi FALSE</span>
-<span class="co">#&gt;   ..$ is_user: logi FALSE</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/kuromoji.html">kuromoji</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"なぜ分かり合えないのか！？"</span>,</span>
+<span>    <span class="st">"なぜ貴様等は他を出し抜こうとするのか！？"</span>,</span>
+<span>    <span class="st">"ところできのこはあんな縦に長かったか！？"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">res</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="co">#&gt; List of 8</span></span>
+<span><span class="co">#&gt;  $ :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ surface: chr "なぜ"</span></span>
+<span><span class="co">#&gt;   ..$ feature: chr "副詞,助詞類接続,*,*,*,*,なぜ,ナゼ,ナゼ"</span></span>
+<span><span class="co">#&gt;   ..$ is_know: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..$ is_unk : logi FALSE</span></span>
+<span><span class="co">#&gt;   ..$ is_user: logi FALSE</span></span>
+<span><span class="co">#&gt;  $ :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ surface: chr "分かり"</span></span>
+<span><span class="co">#&gt;   ..$ feature: chr "動詞,自立,*,*,五段・ラ行,連用形,分かる,ワカリ,ワカリ"</span></span>
+<span><span class="co">#&gt;   ..$ is_know: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..$ is_unk : logi FALSE</span></span>
+<span><span class="co">#&gt;   ..$ is_user: logi FALSE</span></span>
+<span><span class="co">#&gt;  $ :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ surface: chr "合え"</span></span>
+<span><span class="co">#&gt;   ..$ feature: chr "動詞,自立,*,*,一段,未然形,合える,アエ,アエ"</span></span>
+<span><span class="co">#&gt;   ..$ is_know: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..$ is_unk : logi FALSE</span></span>
+<span><span class="co">#&gt;   ..$ is_user: logi FALSE</span></span>
+<span><span class="co">#&gt;  $ :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ surface: chr "ない"</span></span>
+<span><span class="co">#&gt;   ..$ feature: chr "助動詞,*,*,*,特殊・ナイ,基本形,ない,ナイ,ナイ"</span></span>
+<span><span class="co">#&gt;   ..$ is_know: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..$ is_unk : logi FALSE</span></span>
+<span><span class="co">#&gt;   ..$ is_user: logi FALSE</span></span>
+<span><span class="co">#&gt;  $ :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ surface: chr "の"</span></span>
+<span><span class="co">#&gt;   ..$ feature: chr "名詞,非自立,一般,*,*,*,の,ノ,ノ"</span></span>
+<span><span class="co">#&gt;   ..$ is_know: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..$ is_unk : logi FALSE</span></span>
+<span><span class="co">#&gt;   ..$ is_user: logi FALSE</span></span>
+<span><span class="co">#&gt;  $ :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ surface: chr "か"</span></span>
+<span><span class="co">#&gt;   ..$ feature: chr "助詞,副助詞／並立助詞／終助詞,*,*,*,*,か,カ,カ"</span></span>
+<span><span class="co">#&gt;   ..$ is_know: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..$ is_unk : logi FALSE</span></span>
+<span><span class="co">#&gt;   ..$ is_user: logi FALSE</span></span>
+<span><span class="co">#&gt;  $ :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ surface: chr "！"</span></span>
+<span><span class="co">#&gt;   ..$ feature: chr "記号,一般,*,*,*,*,！,！,！"</span></span>
+<span><span class="co">#&gt;   ..$ is_know: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..$ is_unk : logi FALSE</span></span>
+<span><span class="co">#&gt;   ..$ is_user: logi FALSE</span></span>
+<span><span class="co">#&gt;  $ :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ surface: chr "？"</span></span>
+<span><span class="co">#&gt;   ..$ feature: chr "記号,一般,*,*,*,*,？,？,？"</span></span>
+<span><span class="co">#&gt;   ..$ is_know: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..$ is_unk : logi FALSE</span></span>
+<span><span class="co">#&gt;   ..$ is_user: logi FALSE</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="prettify-output">Prettify Output<a class="anchor" aria-label="anchor" href="#prettify-output"></a>
 </h3>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/prettify.html">prettify</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span>
-<span class="co">#&gt;   doc_id  token is_unk   POS1                     POS2 POS3 POS4 X5StageUse1</span>
-<span class="co">#&gt; 1      1   なぜ  FALSE   副詞               助詞類接続 &lt;NA&gt; &lt;NA&gt;        &lt;NA&gt;</span>
-<span class="co">#&gt; 2      1 分かり  FALSE   動詞                     自立 &lt;NA&gt; &lt;NA&gt;  五段・ラ行</span>
-<span class="co">#&gt; 3      1   合え  FALSE   動詞                     自立 &lt;NA&gt; &lt;NA&gt;        一段</span>
-<span class="co">#&gt; 4      1   ない  FALSE 助動詞                     &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;  特殊・ナイ</span>
-<span class="co">#&gt; 5      1     の  FALSE   名詞                   非自立 一般 &lt;NA&gt;        &lt;NA&gt;</span>
-<span class="co">#&gt; 6      1     か  FALSE   助詞 副助詞／並立助詞／終助詞 &lt;NA&gt; &lt;NA&gt;        &lt;NA&gt;</span>
-<span class="co">#&gt;   X5StageUse2 Original  Yomi1  Yomi2</span>
-<span class="co">#&gt; 1        &lt;NA&gt;     なぜ   ナゼ   ナゼ</span>
-<span class="co">#&gt; 2      連用形   分かる ワカリ ワカリ</span>
-<span class="co">#&gt; 3      未然形   合える   アエ   アエ</span>
-<span class="co">#&gt; 4      基本形     ない   ナイ   ナイ</span>
-<span class="co">#&gt; 5        &lt;NA&gt;       の     ノ     ノ</span>
-<span class="co">#&gt; 6        &lt;NA&gt;       か     カ     カ</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/prettify.html">prettify</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   doc_id  token is_unk   POS1                     POS2 POS3 POS4 X5StageUse1</span></span>
+<span><span class="co">#&gt; 1      1   なぜ  FALSE   副詞               助詞類接続 &lt;NA&gt; &lt;NA&gt;        &lt;NA&gt;</span></span>
+<span><span class="co">#&gt; 2      1 分かり  FALSE   動詞                     自立 &lt;NA&gt; &lt;NA&gt;  五段・ラ行</span></span>
+<span><span class="co">#&gt; 3      1   合え  FALSE   動詞                     自立 &lt;NA&gt; &lt;NA&gt;        一段</span></span>
+<span><span class="co">#&gt; 4      1   ない  FALSE 助動詞                     &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;  特殊・ナイ</span></span>
+<span><span class="co">#&gt; 5      1     の  FALSE   名詞                   非自立 一般 &lt;NA&gt;        &lt;NA&gt;</span></span>
+<span><span class="co">#&gt; 6      1     か  FALSE   助詞 副助詞／並立助詞／終助詞 &lt;NA&gt; &lt;NA&gt;        &lt;NA&gt;</span></span>
+<span><span class="co">#&gt;   X5StageUse2 Original  Yomi1  Yomi2</span></span>
+<span><span class="co">#&gt; 1        &lt;NA&gt;     なぜ   ナゼ   ナゼ</span></span>
+<span><span class="co">#&gt; 2      連用形   分かる ワカリ ワカリ</span></span>
+<span><span class="co">#&gt; 3      未然形   合える   アエ   アエ</span></span>
+<span><span class="co">#&gt; 4      基本形     ない   ナイ   ナイ</span></span>
+<span><span class="co">#&gt; 5        &lt;NA&gt;       の     ノ     ノ</span></span>
+<span><span class="co">#&gt; 6        &lt;NA&gt;       か     カ     カ</span></span></code></pre></div>
 <p>The output has these columns.</p>
 <ul>
 <li>doc_id: 文番号</li>
@@ -182,24 +182,24 @@
 <h3 id="pack-output">Pack Output<a class="anchor" aria-label="anchor" href="#pack-output"></a>
 </h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/kuromoji.html">kuromoji</a></span><span class="op">(</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"なぜ分かり合えないのか！？"</span>,
-    <span class="st">"なぜ貴様等は他を出し抜こうとするのか！？"</span>,
-    <span class="st">"ところできのこはあんな縦に長かったか！？"</span>,
-    <span class="st">"とにかく不様、そんな事ではあの小娘には勝てないわ。"</span>,
-    <span class="st">"そう、皆で協力して挑むのだ！"</span>,
-    <span class="st">"えー、まぁ今回はその件で伺いました。"</span><span class="op">)</span>
-<span class="op">)</span> |&gt; 
-  <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/prettify.html">prettify</a></span><span class="op">(</span><span class="op">)</span> |&gt; 
-  <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/pack.html">pack</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span>
-<span class="co">#&gt;   doc_id                                                             text</span>
-<span class="co">#&gt; 1      1                                なぜ 分かり 合え ない の か ！ ？</span>
-<span class="co">#&gt; 2      2            なぜ 貴様 等 は 他 を 出し抜こ う と する の か ！ ？</span>
-<span class="co">#&gt; 3      3               ところで きのこ は あんな 縦 に 長かっ た か ！ ？</span>
-<span class="co">#&gt; 4      4 とにかく 不様 、 そんな 事 で は あの 小娘 に は 勝て ない わ 。</span>
-<span class="co">#&gt; 5      5                           そう 、 皆 で 協力 し て 挑む の だ ！</span>
-<span class="co">#&gt; 6      6                  えー 、 まぁ 今回 は その 件 で 伺い まし た 。</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/kuromoji.html">kuromoji</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"なぜ分かり合えないのか！？"</span>,</span>
+<span>    <span class="st">"なぜ貴様等は他を出し抜こうとするのか！？"</span>,</span>
+<span>    <span class="st">"ところできのこはあんな縦に長かったか！？"</span>,</span>
+<span>    <span class="st">"とにかく不様、そんな事ではあの小娘には勝てないわ。"</span>,</span>
+<span>    <span class="st">"そう、皆で協力して挑むのだ！"</span>,</span>
+<span>    <span class="st">"えー、まぁ今回はその件で伺いました。"</span><span class="op">)</span></span>
+<span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/prettify.html">prettify</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/pack.html">pack</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   doc_id                                                             text</span></span>
+<span><span class="co">#&gt; 1      1                                なぜ 分かり 合え ない の か ！ ？</span></span>
+<span><span class="co">#&gt; 2      2            なぜ 貴様 等 は 他 を 出し抜こ う と する の か ！ ？</span></span>
+<span><span class="co">#&gt; 3      3               ところで きのこ は あんな 縦 に 長かっ た か ！ ？</span></span>
+<span><span class="co">#&gt; 4      4 とにかく 不様 、 そんな 事 で は あの 小娘 に は 勝て ない わ 。</span></span>
+<span><span class="co">#&gt; 5      5                           そう 、 皆 で 協力 し て 挑む の だ ！</span></span>
+<span><span class="co">#&gt; 6      6                  えー 、 まぁ 今回 は その 件 で 伺い まし た 。</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -261,7 +261,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
     </footer>
