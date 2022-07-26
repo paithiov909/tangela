@@ -10,7 +10,7 @@ kuromoji(chr)
 \item{chr}{Character vector to be tokenized.}
 }
 \value{
-List.
+A data.frame
 }
 \description{
 Call kuromoji tokenizer

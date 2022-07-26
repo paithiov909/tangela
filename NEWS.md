@@ -1,3 +1,8 @@
+# tangela 0.1.0
+
+* Changed output style of `kuromoji`.
+* Cleaned dependencies.
+
 # tangela 0.0.9
 
 * Update `pack` function.

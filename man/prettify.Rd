@@ -4,25 +4,21 @@
 \alias{prettify}
 \title{Prettify tokenized output}
 \usage{
-prettify(
-  list,
-  sep = " ",
-  into = c("POS1", "POS2", "POS3", "POS4", "X5StageUse1", "X5StageUse2", "Original",
-    "Yomi1", "Yomi2")
-)
+prettify(df, into = get_dict_features("ipa"), col_select = seq_along(into))
 }
 \arguments{
-\item{list}{List that comes out of \code{tangela::kuromoji()}.}
-
-\item{sep}{Character scalar that is used as separators
-with which the function replaces tab.}
+\item{df}{A data.frame that has feature column to be prettified.}
 
 \item{into}{Character vector that is used as column names of
 features.}
+
+\item{col_select}{Character or integer vector that will be kept
+in prettified features.}
 }
 \value{
-data.frame
+A data.frame.
 }
 \description{
-Prettify tokenized output
+Turns a single character column into features
+separating with delimiter.
 }

@@ -35,56 +35,13 @@ res <- tangela::kuromoji(
     "なぜ貴様等は他を出し抜こうとするのか！？",
     "ところできのこはあんな縦に長かったか！？")
 )
-str(res[[1]])
-#> List of 8
-#>  $ :List of 5
-#>   ..$ surface: chr "なぜ"
-#>   ..$ feature: chr "副詞,助詞類接続,*,*,*,*,なぜ,ナゼ,ナゼ"
-#>   ..$ is_know: logi TRUE
-#>   ..$ is_unk : logi FALSE
-#>   ..$ is_user: logi FALSE
-#>  $ :List of 5
-#>   ..$ surface: chr "分かり"
-#>   ..$ feature: chr "動詞,自立,*,*,五段・ラ行,連用形,分かる,ワカリ,ワカリ"
-#>   ..$ is_know: logi TRUE
-#>   ..$ is_unk : logi FALSE
-#>   ..$ is_user: logi FALSE
-#>  $ :List of 5
-#>   ..$ surface: chr "合え"
-#>   ..$ feature: chr "動詞,自立,*,*,一段,未然形,合える,アエ,アエ"
-#>   ..$ is_know: logi TRUE
-#>   ..$ is_unk : logi FALSE
-#>   ..$ is_user: logi FALSE
-#>  $ :List of 5
-#>   ..$ surface: chr "ない"
-#>   ..$ feature: chr "助動詞,*,*,*,特殊・ナイ,基本形,ない,ナイ,ナイ"
-#>   ..$ is_know: logi TRUE
-#>   ..$ is_unk : logi FALSE
-#>   ..$ is_user: logi FALSE
-#>  $ :List of 5
-#>   ..$ surface: chr "の"
-#>   ..$ feature: chr "名詞,非自立,一般,*,*,*,の,ノ,ノ"
-#>   ..$ is_know: logi TRUE
-#>   ..$ is_unk : logi FALSE
-#>   ..$ is_user: logi FALSE
-#>  $ :List of 5
-#>   ..$ surface: chr "か"
-#>   ..$ feature: chr "助詞,副助詞／並立助詞／終助詞,*,*,*,*,か,カ,カ"
-#>   ..$ is_know: logi TRUE
-#>   ..$ is_unk : logi FALSE
-#>   ..$ is_user: logi FALSE
-#>  $ :List of 5
-#>   ..$ surface: chr "！"
-#>   ..$ feature: chr "記号,一般,*,*,*,*,！,！,！"
-#>   ..$ is_know: logi TRUE
-#>   ..$ is_unk : logi FALSE
-#>   ..$ is_user: logi FALSE
-#>  $ :List of 5
-#>   ..$ surface: chr "？"
-#>   ..$ feature: chr "記号,一般,*,*,*,*,？,？,？"
-#>   ..$ is_know: logi TRUE
-#>   ..$ is_unk : logi FALSE
-#>   ..$ is_user: logi FALSE
+str(res)
+#> 'data.frame':    33 obs. of  5 variables:
+#>  $ doc_id : chr  "1" "1" "1" "1" ...
+#>  $ token  : chr  "なぜ" "分かり" "合え" "ない" ...
+#>  $ feature: chr  "副詞,助詞類接続,*,*,*,*,なぜ,ナゼ,ナゼ" "動詞,自立,*,*,五段・ラ行,連用形,分かる,ワカリ,ワカリ" "動詞,自立,*,*,一段,未然形,合える,アエ,アエ" "助動詞,*,*,*,特殊・ナイ,基本形,ない,ナイ,ナイ" ...
+#>  $ is_unk : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
+#>  $ is_user: logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
 ```
 
 ### Prettify Output
@@ -92,20 +49,20 @@ str(res[[1]])
 ``` r
 res <- tangela::prettify(res)
 head(res)
-#>   doc_id  token is_unk   POS1                     POS2 POS3 POS4 X5StageUse1
-#> 1      1   なぜ  FALSE   副詞               助詞類接続 <NA> <NA>        <NA>
-#> 2      1 分かり  FALSE   動詞                     自立 <NA> <NA>  五段・ラ行
-#> 3      1   合え  FALSE   動詞                     自立 <NA> <NA>        一段
-#> 4      1   ない  FALSE 助動詞                     <NA> <NA> <NA>  特殊・ナイ
-#> 5      1     の  FALSE   名詞                   非自立 一般 <NA>        <NA>
-#> 6      1     か  FALSE   助詞 副助詞／並立助詞／終助詞 <NA> <NA>        <NA>
-#>   X5StageUse2 Original  Yomi1  Yomi2
-#> 1        <NA>     なぜ   ナゼ   ナゼ
-#> 2      連用形   分かる ワカリ ワカリ
-#> 3      未然形   合える   アエ   アエ
-#> 4      基本形     ない   ナイ   ナイ
-#> 5        <NA>       の     ノ     ノ
-#> 6        <NA>       か     カ     カ
+#>   doc_id  token is_unk is_user   POS1                     POS2 POS3 POS4
+#> 1      1   なぜ  FALSE   FALSE   副詞               助詞類接続 <NA> <NA>
+#> 2      1 分かり  FALSE   FALSE   動詞                     自立 <NA> <NA>
+#> 3      1   合え  FALSE   FALSE   動詞                     自立 <NA> <NA>
+#> 4      1   ない  FALSE   FALSE 助動詞                     <NA> <NA> <NA>
+#> 5      1     の  FALSE   FALSE   名詞                   非自立 一般 <NA>
+#> 6      1     か  FALSE   FALSE   助詞 副助詞／並立助詞／終助詞 <NA> <NA>
+#>   X5StageUse1 X5StageUse2 Original  Yomi1  Yomi2
+#> 1        <NA>        <NA>     なぜ   ナゼ   ナゼ
+#> 2  五段・ラ行      連用形   分かる ワカリ ワカリ
+#> 3        一段      未然形   合える   アエ   アエ
+#> 4  特殊・ナイ      基本形     ない   ナイ   ナイ
+#> 5        <NA>        <NA>       の     ノ     ノ
+#> 6        <NA>        <NA>       か     カ     カ
 ```
 
 The output has these columns.
@@ -113,6 +70,8 @@ The output has these columns.
 -   doc_id: 文番号
 -   token: 表層形（surface form）
 -   is_unk: 未知語判定（whether or not the token is unknown word?）
+-   is_user: ユーザー辞書判定（whether or not the token is user defined
+    word?）
 -   POS1\~POS4: 品詞, 品詞細分類1, 品詞細分類2, 品詞細分類3
 -   X5StageUse1: 活用型（ex. 五段, 下二段…）
 -   X5StageUse2: 活用形（ex. 連用形, 基本形…）

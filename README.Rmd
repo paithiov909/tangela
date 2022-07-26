@@ -43,7 +43,7 @@ res <- tangela::kuromoji(
     "なぜ貴様等は他を出し抜こうとするのか！？",
     "ところできのこはあんな縦に長かったか！？")
 )
-str(res[[1]])
+str(res)
 ```
 
 ### Prettify Output
@@ -58,6 +58,7 @@ The output has these columns.
 - doc_id: 文番号
 - token: 表層形（surface form）
 - is_unk: 未知語判定（whether or not the token is unknown word?）
+- is_user: ユーザー辞書判定（whether or not the token is user defined word?）
 - POS1~POS4: 品詞, 品詞細分類1, 品詞細分類2, 品詞細分類3
 - X5StageUse1: 活用型（ex. 五段, 下二段…）
 - X5StageUse2: 活用形（ex. 連用形, 基本形…）

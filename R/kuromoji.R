@@ -1,14 +1,11 @@
 #' Call kuromoji tokenizer
 #'
 #' @param chr Character vector to be tokenized.
-#' @return List.
+#' @return A data.frame
 #'
 #' @export
 kuromoji <- function(chr) {
   stopifnot(rlang::is_character(chr))
-  if (is.factor(chr) || any(is.na(chr))) {
-    rlang::abort("Invalid string provided. String must be a character scalar, not NA_character_.")
-  }
 
   # keep names
   nm <- names(chr)
@@ -16,28 +13,28 @@ kuromoji <- function(chr) {
     nm <- seq_along(chr)
   }
 
-  res <- lapply(chr, function(elem) {
-    elem <- tidyr::replace_na(stringi::stri_enc_toutf8(elem), "")
+  purrr::imap_dfr(purrr::set_names(chr, nm), function(str, id) {
+    str <- stringi::stri_replace_na(stringi::stri_enc_toutf8(str), "")
     tokens <- rJava::.jcall(
       Tokenizer(),
       "Ljava/util/List;",
       "tokenize",
-      elem
+      str
     )
-    lapply(tokens, function(token) {
-      surface <- token$getSurfaceForm()
-      feature <- token$getAllFeatures()
+    res <- lapply(tokens, function(elem) {
+      surface <- elem$getSurfaceForm()
+      feature <- elem$getAllFeatures()
       Encoding(surface) <- "UTF-8"
       Encoding(feature) <- "UTF-8"
-      list(
-        surface = surface,
+      data.frame(
+        doc_id = id,
+        token = surface,
         feature = feature,
-        is_know = token$isKnown(),
-        is_unk = token$isUnknown(),
-        is_user = token$isUser()
+        # is_know = elem$isKnown(),
+        is_unk = elem$isUnknown(),
+        is_user = elem$isUser()
       )
     })
+    purrr::map_dfr(res, ~.)
   })
-
-  purrr::set_names(res, nm)
 }

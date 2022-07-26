@@ -1,7 +1,7 @@
 Type: Package
 Package: tangela
 Title: rJava Interface to Kuromoji
-Version: 0.0.9
+Version: 0.1.0
 Authors@R: 
     person("Akiru", "Kato", , "paithiov909@gmail.com", role = c("aut", "cre"))
 Maintainer: Akiru Kato <paithiov909@gmail.com>
@@ -12,13 +12,12 @@ BugReports: https://github.com/paithiov909/tangela/issues
 Depends: 
     R (>= 3.2.0)
 Imports: 
-    audubon,
+    audubon (>= 0.3.0),
     dplyr,
     purrr,
     rJava,
     rlang (>= 0.1.2),
-    stringi,
-    tidyr
+    stringi
 Suggests: 
     knitr,
     rmarkdown,
