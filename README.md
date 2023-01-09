@@ -67,17 +67,17 @@ head(res)
 
 The output has these columns.
 
--   doc_id: 文番号
--   token: 表層形（surface form）
--   is_unk: 未知語判定（whether or not the token is unknown word?）
--   is_user: ユーザー辞書判定（whether or not the token is user defined
-    word?）
--   POS1\~POS4: 品詞, 品詞細分類1, 品詞細分類2, 品詞細分類3
--   X5StageUse1: 活用型（ex. 五段, 下二段…）
--   X5StageUse2: 活用形（ex. 連用形, 基本形…）
--   Original: 原形（lemmatised form）
--   Yomi1: 読み（readings）
--   Yomi2: 発音（pronunciation)
+- doc_id: 文番号
+- token: 表層形（surface form）
+- is_unk: 未知語判定（whether or not the token is unknown word?）
+- is_user: ユーザー辞書判定（whether or not the token is user defined
+  word?）
+- POS1\~POS4: 品詞, 品詞細分類1, 品詞細分類2, 品詞細分類3
+- X5StageUse1: 活用型（ex. 五段, 下二段…）
+- X5StageUse2: 活用形（ex. 連用形, 基本形…）
+- Original: 原形（lemmatised form）
+- Yomi1: 読み（readings）
+- Yomi2: 発音（pronunciation)
 
 ### Pack Output
 
@@ -104,7 +104,7 @@ print(res)
 
 ## License
 
-© 2022 Akiru Kato
+© 2023 Akiru Kato
 
 Licensed under [the Apache License, Version
 2.0](http://www.apache.org/licenses/LICENSE-2.0.html). This software

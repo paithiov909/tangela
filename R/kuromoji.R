@@ -30,7 +30,7 @@ kuromoji <- function(chr) {
         doc_id = id,
         token = surface,
         feature = feature,
-        # is_know = elem$isKnown(),
+        # is_known = elem$isKnown(),
         is_unk = elem$isUnknown(),
         is_user = elem$isUser()
       )

@@ -84,7 +84,7 @@ print(res)
 
 ## License
 
-&copy; 2022 Akiru Kato
+&copy; 2023 Akiru Kato
 
 Licensed under [the Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html). This software includes the works distributed under the Apache License, Version 2.0.
 
