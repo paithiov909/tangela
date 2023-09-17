@@ -3,5 +3,6 @@
 ^\.github$
 ^docs$
 ^pkgdown$
+^renovate\.json$
 ^README\.Rmd$
 ^LICENSE\.md$
