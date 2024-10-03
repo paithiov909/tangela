@@ -1,3 +1,7 @@
+# tangela 0.2.0
+
+* Cleaned dependencies.
+
 # tangela 0.1.0
 
 * Changed output style of `kuromoji`.
@@ -17,4 +21,4 @@
 
 * Added a `NEWS.md` file to track changes to the package.
 * Clean dependencies.
-* Fix the behavior when the input vector is named. 
+* Fix the behavior when the input vector is named.

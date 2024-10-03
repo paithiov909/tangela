@@ -22,10 +22,10 @@ pkgload::load_all()
 [![GitHub license](https://img.shields.io/github/license/paithiov909/tangela)](https://github.com/paithiov909/tangela/blob/main/LICENSE)
 <!-- badges: end -->
 
-tangela is an rJava wrapper of atilika/kuromoji (bundled v0.7.7).
+tangela is an rJava wrapper for atilika/kuromoji (bundled v0.7.7).
 
-[Kuromoji](https://github.com/atilika/kuromoji) is a "self-contained Japanese morphological analyzer" such that tangela only requires Java; 
-It never has any other dependencies such as MeCab and its dictionaries. 
+[Kuromoji](https://github.com/atilika/kuromoji) is a "self-contained Japanese morphological analyzer" such that tangela only requires Java;
+It never has any other dependencies such as MeCab and its dictionaries.
 
 ## Usage
 
@@ -76,15 +76,15 @@ res <- tangela::kuromoji(
     "とにかく不様、そんな事ではあの小娘には勝てないわ。",
     "そう、皆で協力して挑むのだ！",
     "えー、まぁ今回はその件で伺いました。")
-) |> 
-  tangela::prettify() |> 
+) |>
+  tangela::prettify() |>
   tangela::pack()
 print(res)
 ```
 
 ## License
 
-&copy; 2023 Akiru Kato
+&copy; 2024 Akiru Kato
 
 Licensed under [the Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html). This software includes the works distributed under the Apache License, Version 2.0.
 

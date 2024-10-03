@@ -1,7 +1,7 @@
 #' Call kuromoji tokenizer
 #'
 #' @param chr Character vector to be tokenized.
-#' @return A data.frame
+#' @returns A tibble.
 #'
 #' @export
 kuromoji <- function(chr) {
@@ -13,7 +13,7 @@ kuromoji <- function(chr) {
     nm <- seq_along(chr)
   }
 
-  purrr::imap_dfr(purrr::set_names(chr, nm), function(str, id) {
+  purrr::imap(purrr::set_names(chr, nm), function(str, id) {
     str <- stringi::stri_replace_na(stringi::stri_enc_toutf8(str), "")
     tokens <- rJava::.jcall(
       Tokenizer(),
@@ -35,6 +35,8 @@ kuromoji <- function(chr) {
         is_user = elem$isUser()
       )
     })
-    purrr::map_dfr(res, ~.)
-  })
+    purrr::list_rbind(res)
+  }) %>%
+    purrr::list_rbind() %>%
+    dplyr::as_tibble()
 }

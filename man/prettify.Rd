@@ -4,21 +4,41 @@
 \alias{prettify}
 \title{Prettify tokenized output}
 \usage{
-prettify(df, into = get_dict_features("ipa"), col_select = seq_along(into))
+prettify(
+  tbl,
+  col = "feature",
+  into = c("POS1", "POS2", "POS3", "POS4", "X5StageUse1", "X5StageUse2", "Original",
+    "Yomi1", "Yomi2"),
+  col_select = seq_along(into),
+  delim = ","
+)
 }
 \arguments{
-\item{df}{A data.frame that has feature column to be prettified.}
+\item{tbl}{A data.frame that has feature column to be prettified.}
+
+\item{col}{<\code{\link[rlang:args_data_masking]{data-masked}}>
+Column name where to be prettified.}
 
 \item{into}{Character vector that is used as column names of
 features.}
 
 \item{col_select}{Character or integer vector that will be kept
 in prettified features.}
+
+\item{delim}{Character scalar used to separate fields within a feature.}
 }
 \value{
 A data.frame.
 }
 \description{
 Turns a single character column into features
-separating with delimiter.
+while separating with delimiter.
+}
+\examples{
+prettify(
+  data.frame(x = c("x,y", "y,z", "z,x")),
+  col = "x",
+  into = c("a", "b"),
+  col_select = "b"
+)
 }

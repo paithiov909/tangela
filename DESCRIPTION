@@ -1,29 +1,29 @@
 Type: Package
 Package: tangela
 Title: rJava Interface to Kuromoji
-Version: 0.1.1
-Authors@R: 
+Version: 0.2.0
+Authors@R:
     person("Akiru", "Kato", , "paithiov909@gmail.com", role = c("aut", "cre"))
 Maintainer: Akiru Kato <paithiov909@gmail.com>
-Description: An rJava wrapper of atilika/kuromoji (v0.7.7).
+Description: An rJava wrapper for atilika/kuromoji (v0.7.7).
+    This package will work fine, but it is too slow to be used in production.
 License: Apache License (>= 2)
 URL: https://github.com/paithiov909/tangela
 BugReports: https://github.com/paithiov909/tangela/issues
-Depends: 
+Depends:
     R (>= 3.2.0)
-Imports: 
-    audubon (>= 0.3.0),
+Imports:
     dplyr,
     purrr,
+    readr,
     rJava,
     rlang (>= 0.1.2),
     stringi
-Suggests: 
+Suggests:
     knitr,
     rmarkdown,
     roxygen2
 Encoding: UTF-8
-LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 SystemRequirements: Java
