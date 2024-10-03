@@ -14,4 +14,4 @@ reference:
     contents:
       - prettify
       - pack
-      - get_dict_features
+      - ngram_tokenizer
