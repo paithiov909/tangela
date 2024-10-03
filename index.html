@@ -17,8 +17,8 @@
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="rJava Interface to Kuromoji">
-<meta name="description" content="An rJava wrapper of atilika/kuromoji (v0.7.7).">
-<meta property="og:description" content="An rJava wrapper of atilika/kuromoji (v0.7.7).">
+<meta name="description" content="An rJava wrapper for atilika/kuromoji (v0.7.7). This package will work fine, but it is too slow to be used in production.">
+<meta property="og:description" content="An rJava wrapper for atilika/kuromoji (v0.7.7). This package will work fine, but it is too slow to be used in production.">
 <meta property="og:image" content="https://paithiov909.github.io/tangela/logo.png">
 </head>
 <body>
@@ -29,7 +29,7 @@
 
     <a class="navbar-brand me-2" href="index.html">tangela</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,7 +61,7 @@
 </div>
 <!-- badges: start -->
 
-<p>tangela is an rJava wrapper of atilika/kuromoji (bundled v0.7.7).</p>
+<p>tangela is an rJava wrapper for atilika/kuromoji (bundled v0.7.7).</p>
 <p><a href="https://github.com/atilika/kuromoji" class="external-link">Kuromoji</a> is a “self-contained Japanese morphological analyzer” such that tangela only requires Java; It never has any other dependencies such as MeCab and its dictionaries.</p>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
@@ -82,12 +82,12 @@
 <span>    <span class="st">"ところできのこはあんな縦に長かったか！？"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span><span class="co">#&gt; 'data.frame':    33 obs. of  5 variables:</span></span>
-<span><span class="co">#&gt;  $ doc_id : chr  "1" "1" "1" "1" ...</span></span>
-<span><span class="co">#&gt;  $ token  : chr  "なぜ" "分かり" "合え" "ない" ...</span></span>
-<span><span class="co">#&gt;  $ feature: chr  "副詞,助詞類接続,*,*,*,*,なぜ,ナゼ,ナゼ" "動詞,自立,*,*,五段・ラ行,連用形,分かる,ワカリ,ワカリ" "動詞,自立,*,*,一段,未然形,合える,アエ,アエ" "助動詞,*,*,*,特殊・ナイ,基本形,ない,ナイ,ナイ" ...</span></span>
-<span><span class="co">#&gt;  $ is_unk : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ is_user: logi  FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span></code></pre></div>
+<span><span class="co">#&gt; tibble [33 × 5] (S3: tbl_df/tbl/data.frame)</span></span>
+<span><span class="co">#&gt;  $ doc_id : chr [1:33] "1" "1" "1" "1" ...</span></span>
+<span><span class="co">#&gt;  $ token  : chr [1:33] "なぜ" "分かり" "合え" "ない" ...</span></span>
+<span><span class="co">#&gt;  $ feature: chr [1:33] "副詞,助詞類接続,*,*,*,*,なぜ,ナゼ,ナゼ" "動詞,自立,*,*,五段・ラ行,連用形,分かる,ワカリ,ワカリ" "動詞,自立,*,*,一段,未然形,合える,アエ,アエ" "助動詞,*,*,*,特殊・ナイ,基本形,ない,ナイ,ナイ" ...</span></span>
+<span><span class="co">#&gt;  $ is_unk : logi [1:33] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ is_user: logi [1:33] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="prettify-output">Prettify Output<a class="anchor" aria-label="anchor" href="#prettify-output"></a>
@@ -95,20 +95,16 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/prettify.html">prettify</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   doc_id  token is_unk is_user   POS1                     POS2 POS3 POS4</span></span>
-<span><span class="co">#&gt; 1      1   なぜ  FALSE   FALSE   副詞               助詞類接続 &lt;NA&gt; &lt;NA&gt;</span></span>
-<span><span class="co">#&gt; 2      1 分かり  FALSE   FALSE   動詞                     自立 &lt;NA&gt; &lt;NA&gt;</span></span>
-<span><span class="co">#&gt; 3      1   合え  FALSE   FALSE   動詞                     自立 &lt;NA&gt; &lt;NA&gt;</span></span>
-<span><span class="co">#&gt; 4      1   ない  FALSE   FALSE 助動詞                     &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;</span></span>
-<span><span class="co">#&gt; 5      1     の  FALSE   FALSE   名詞                   非自立 一般 &lt;NA&gt;</span></span>
-<span><span class="co">#&gt; 6      1     か  FALSE   FALSE   助詞 副助詞／並立助詞／終助詞 &lt;NA&gt; &lt;NA&gt;</span></span>
-<span><span class="co">#&gt;   X5StageUse1 X5StageUse2 Original  Yomi1  Yomi2</span></span>
-<span><span class="co">#&gt; 1        &lt;NA&gt;        &lt;NA&gt;     なぜ   ナゼ   ナゼ</span></span>
-<span><span class="co">#&gt; 2  五段・ラ行      連用形   分かる ワカリ ワカリ</span></span>
-<span><span class="co">#&gt; 3        一段      未然形   合える   アエ   アエ</span></span>
-<span><span class="co">#&gt; 4  特殊・ナイ      基本形     ない   ナイ   ナイ</span></span>
-<span><span class="co">#&gt; 5        &lt;NA&gt;        &lt;NA&gt;       の     ノ     ノ</span></span>
-<span><span class="co">#&gt; 6        &lt;NA&gt;        &lt;NA&gt;       か     カ     カ</span></span></code></pre></div>
+<span><span class="co">#&gt; # A tibble: 6 × 13</span></span>
+<span><span class="co">#&gt;   doc_id token  is_unk is_user POS1   POS2   POS3  POS4  X5StageUse1 X5StageUse2</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;lgl&gt;  &lt;lgl&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;      </span></span>
+<span><span class="co">#&gt; 1 1      なぜ   FALSE  FALSE   副詞   助詞…  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;        &lt;NA&gt;       </span></span>
+<span><span class="co">#&gt; 2 1      分かり FALSE  FALSE   動詞   自立   &lt;NA&gt;  &lt;NA&gt;  五段・ラ行  連用形     </span></span>
+<span><span class="co">#&gt; 3 1      合え   FALSE  FALSE   動詞   自立   &lt;NA&gt;  &lt;NA&gt;  一段        未然形     </span></span>
+<span><span class="co">#&gt; 4 1      ない   FALSE  FALSE   助動詞 &lt;NA&gt;   &lt;NA&gt;  &lt;NA&gt;  特殊・ナイ  基本形     </span></span>
+<span><span class="co">#&gt; 5 1      の     FALSE  FALSE   名詞   非自立 一般  &lt;NA&gt;  &lt;NA&gt;        &lt;NA&gt;       </span></span>
+<span><span class="co">#&gt; 6 1      か     FALSE  FALSE   助詞   副助…  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;        &lt;NA&gt;       </span></span>
+<span><span class="co">#&gt; # ℹ 3 more variables: Original &lt;chr&gt;, Yomi1 &lt;chr&gt;, Yomi2 &lt;chr&gt;</span></span></code></pre></div>
 <p>The output has these columns.</p>
 <ul>
 <li>doc_id: 文番号</li>
@@ -134,23 +130,25 @@
 <span>    <span class="st">"とにかく不様、そんな事ではあの小娘には勝てないわ。"</span>,</span>
 <span>    <span class="st">"そう、皆で協力して挑むのだ！"</span>,</span>
 <span>    <span class="st">"えー、まぁ今回はその件で伺いました。"</span><span class="op">)</span></span>
-<span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/prettify.html">prettify</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/prettify.html">prettify</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">tangela</span><span class="fu">::</span><span class="fu"><a href="reference/pack.html">pack</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   doc_id                                                             text</span></span>
-<span><span class="co">#&gt; 1      1                                なぜ 分かり 合え ない の か ！ ？</span></span>
-<span><span class="co">#&gt; 2      2            なぜ 貴様 等 は 他 を 出し抜こ う と する の か ！ ？</span></span>
-<span><span class="co">#&gt; 3      3               ところで きのこ は あんな 縦 に 長かっ た か ！ ？</span></span>
-<span><span class="co">#&gt; 4      4 とにかく 不様 、 そんな 事 で は あの 小娘 に は 勝て ない わ 。</span></span>
-<span><span class="co">#&gt; 5      5                           そう 、 皆 で 協力 し て 挑む の だ ！</span></span>
-<span><span class="co">#&gt; 6      6                  えー 、 まぁ 今回 は その 件 で 伺い まし た 。</span></span></code></pre></div>
+<span><span class="co">#&gt; # A tibble: 6 × 2</span></span>
+<span><span class="co">#&gt;   doc_id text                                                            </span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;  &lt;chr&gt;                                                           </span></span>
+<span><span class="co">#&gt; 1 1      なぜ 分かり 合え ない の か ！ ？                               </span></span>
+<span><span class="co">#&gt; 2 2      なぜ 貴様 等 は 他 を 出し抜こ う と する の か ！ ？           </span></span>
+<span><span class="co">#&gt; 3 3      ところで きのこ は あんな 縦 に 長かっ た か ！ ？              </span></span>
+<span><span class="co">#&gt; 4 4      とにかく 不様 、 そんな 事 で は あの 小娘 に は 勝て ない わ 。</span></span>
+<span><span class="co">#&gt; 5 5      そう 、 皆 で 協力 し て 挑む の だ ！                          </span></span>
+<span><span class="co">#&gt; 6 6      えー 、 まぁ 今回 は その 件 で 伺い まし た 。</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
 </h2>
-<p>© 2023 Akiru Kato</p>
+<p>© 2024 Akiru Kato</p>
 <p>Licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" class="external-link">the Apache License, Version 2.0</a>. This software includes the works distributed under the Apache License, Version 2.0.</p>
 <p>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" class="external-link">Eucalyp</a> from <a href="https://www.flaticon.com/" class="external-link">www.flaticon.com</a>.</p>
 </div>
