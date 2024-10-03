@@ -1,6 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.github$
+^\.devcontainer$
 ^docs$
 ^pkgdown$
 ^renovate\.json$
