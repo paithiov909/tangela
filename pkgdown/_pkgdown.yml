@@ -1,10 +1,11 @@
-destination: docs
-
-url: https://paithiov909.github.io/tangela
-
+url: https://paithiov909.github.io/tangela/
 template:
   bootstrap: 5
-
+  light-switch: true
+  opengraph:
+    twitter:
+      creator: "@paithiov909"
+      card: summary_large_image
 reference:
   - title: "POS tagger"
     contents:
