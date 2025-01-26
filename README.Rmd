@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 pkgload::load_all()
 ```
 
-# tangela <a href='https://paithiov909.github.io/tangela'><img src='https://rawcdn.githack.com/paithiov909/tangela/1eeac7579939bbd8de48bb81a2766549da18d61a/man/figures/logo.png' align="right" height="139" /></a>
+# tangela <a href='https://paithiov909.github.io/tangela'><img src='man/figures/logo.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
 [![GitHub last commit](https://img.shields.io/github/last-commit/paithiov909/tangela)](#)

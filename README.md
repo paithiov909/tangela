@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# tangela <a href='https://paithiov909.github.io/tangela'><img src='https://rawcdn.githack.com/paithiov909/tangela/1eeac7579939bbd8de48bb81a2766549da18d61a/man/figures/logo.png' align="right" height="139" /></a>
+# tangela <a href='https://paithiov909.github.io/tangela'><img src='man/figures/logo.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
 
@@ -51,13 +51,13 @@ res <- tangela::prettify(res)
 head(res)
 #> # A tibble: 6 × 13
 #>   doc_id token  is_unk is_user POS1   POS2   POS3  POS4  X5StageUse1 X5StageUse2
-#>   <chr>  <chr>  <lgl>  <lgl>   <chr>  <chr>  <chr> <chr> <chr>       <chr>      
-#> 1 1      なぜ   FALSE  FALSE   副詞   助詞…  <NA>  <NA>  <NA>        <NA>       
-#> 2 1      分かり FALSE  FALSE   動詞   自立   <NA>  <NA>  五段・ラ行  連用形     
-#> 3 1      合え   FALSE  FALSE   動詞   自立   <NA>  <NA>  一段        未然形     
-#> 4 1      ない   FALSE  FALSE   助動詞 <NA>   <NA>  <NA>  特殊・ナイ  基本形     
-#> 5 1      の     FALSE  FALSE   名詞   非自立 一般  <NA>  <NA>        <NA>       
-#> 6 1      か     FALSE  FALSE   助詞   副助…  <NA>  <NA>  <NA>        <NA>       
+#>   <chr>  <chr>  <lgl>  <lgl>   <chr>  <chr>  <chr> <chr> <chr>       <chr>
+#> 1 1      なぜ   FALSE  FALSE   副詞   助詞…  <NA>  <NA>  <NA>        <NA>
+#> 2 1      分かり FALSE  FALSE   動詞   自立   <NA>  <NA>  五段・ラ行  連用形
+#> 3 1      合え   FALSE  FALSE   動詞   自立   <NA>  <NA>  一段        未然形
+#> 4 1      ない   FALSE  FALSE   助動詞 <NA>   <NA>  <NA>  特殊・ナイ  基本形
+#> 5 1      の     FALSE  FALSE   名詞   非自立 一般  <NA>  <NA>        <NA>
+#> 6 1      か     FALSE  FALSE   助詞   副助…  <NA>  <NA>  <NA>        <NA>
 #> # ℹ 3 more variables: Original <chr>, Yomi1 <chr>, Yomi2 <chr>
 ```
 
@@ -90,13 +90,13 @@ res <- tangela::kuromoji(
   tangela::pack()
 print(res)
 #> # A tibble: 6 × 2
-#>   doc_id text                                                            
-#>   <chr>  <chr>                                                           
-#> 1 1      なぜ 分かり 合え ない の か ！ ？                               
-#> 2 2      なぜ 貴様 等 は 他 を 出し抜こ う と する の か ！ ？           
-#> 3 3      ところで きのこ は あんな 縦 に 長かっ た か ！ ？              
+#>   doc_id text
+#>   <chr>  <chr>
+#> 1 1      なぜ 分かり 合え ない の か ！ ？
+#> 2 2      なぜ 貴様 等 は 他 を 出し抜こ う と する の か ！ ？
+#> 3 3      ところで きのこ は あんな 縦 に 長かっ た か ！ ？
 #> 4 4      とにかく 不様 、 そんな 事 で は あの 小娘 に は 勝て ない わ 。
-#> 5 5      そう 、 皆 で 協力 し て 挑む の だ ！                          
+#> 5 5      そう 、 皆 で 協力 し て 挑む の だ ！
 #> 6 6      えー 、 まぁ 今回 は その 件 で 伺い まし た 。
 ```
 
