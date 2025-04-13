@@ -7,8 +7,6 @@
 
 [![GitHub last
 commit](https://img.shields.io/github/last-commit/paithiov909/tangela)](#)
-[![tangela status
-badge](https://paithiov909.r-universe.dev/badges/tangela)](https://paithiov909.r-universe.dev)
 [![GitHub
 license](https://img.shields.io/github/license/paithiov909/tangela)](https://github.com/paithiov909/tangela/blob/main/LICENSE)
 <!-- badges: end -->
